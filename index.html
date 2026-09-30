@@ -1,27 +1,37 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<meta name="viewport"
+      content="width=device-width,
+               initial-scale=1.0,
+               viewport-fit=cover">
 
 <title>Welcome October ♡</title>
+
 
 <style>
 
 /* =========================================================
    FONT
 ========================================================= */
+
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 
 /* =========================================================
    RESET
 ========================================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 html,
 body {
@@ -29,191 +39,265 @@ body {
     min-height: 100%;
 }
 
+
 body {
-    overflow-x: hidden;
+
+    overflow: hidden;
+
+    background: #F6C6C7;
+
     font-family: "Itim", sans-serif;
-    background: #FADCDC;
 }
 
 
 /* =========================================================
    MAIN PAGE
 ========================================================= */
+
 .page {
+
     position: relative;
 
     width: 100%;
-    min-height: 100svh;
+    height: 100svh;
 
     overflow: hidden;
 
-    background-color: #FADCDC;
+    background: #F6C6C7;
 }
 
+
 .content {
+
     position: relative;
 
     width: 100%;
-    min-height: 100svh;
+    height: 100%;
 }
 
 
 /* =========================================================
    FLOATING HEARTS
+   หัวใจสีขาวใหญ่ด้านหลัง
 ========================================================= */
+
 .hearts {
+
     position: absolute;
 
     inset: 0;
 
-    z-index: 2;
+    z-index: 1;
 
     pointer-events: none;
 
     overflow: hidden;
 }
 
+
 .heart {
+
     position: absolute;
 
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.72);
 
-    font-size: clamp(10px, 1.2vw, 18px);
+    font-family: Arial, sans-serif;
+
+    font-weight: normal;
 
     opacity: 0;
 
-    animation: floatHeart linear infinite;
+    animation:
+        floatHeart
+        ease-in-out
+        infinite;
 }
 
 
-/* ---------------------------------------------------------
+/* =========================================================
    HEART POSITIONS
---------------------------------------------------------- */
+========================================================= */
 
 .heart:nth-child(1) {
-    left: 7%;
-    top: 15%;
-    font-size: 13px;
-    animation-duration: 7s;
+
+    left: 5%;
+    top: 13%;
+
+    font-size: 55px;
+
+    animation-duration: 8s;
     animation-delay: 0s;
 }
 
+
 .heart:nth-child(2) {
+
     left: 17%;
-    top: 65%;
-    font-size: 10px;
-    animation-duration: 9s;
+    top: 70%;
+
+    font-size: 38px;
+
+    animation-duration: 10s;
     animation-delay: 2s;
 }
 
+
 .heart:nth-child(3) {
+
     left: 29%;
-    top: 25%;
-    font-size: 16px;
-    animation-duration: 8s;
+    top: 22%;
+
+    font-size: 75px;
+
+    animation-duration: 9s;
     animation-delay: 1s;
 }
 
+
 .heart:nth-child(4) {
-    left: 41%;
-    top: 78%;
-    font-size: 11px;
-    animation-duration: 10s;
+
+    left: 42%;
+    top: 76%;
+
+    font-size: 48px;
+
+    animation-duration: 11s;
     animation-delay: 3s;
 }
 
+
 .heart:nth-child(5) {
-    left: 52%;
-    top: 12%;
-    font-size: 14px;
+
+    left: 53%;
+    top: 9%;
+
+    font-size: 60px;
+
     animation-duration: 8s;
     animation-delay: 2s;
 }
 
+
 .heart:nth-child(6) {
-    left: 63%;
+
+    left: 65%;
     top: 58%;
-    font-size: 10px;
+
+    font-size: 42px;
+
+    animation-duration: 10s;
+    animation-delay: 4s;
+}
+
+
+.heart:nth-child(7) {
+
+    left: 77%;
+    top: 17%;
+
+    font-size: 70px;
+
+    animation-duration: 9s;
+    animation-delay: 1s;
+}
+
+
+.heart:nth-child(8) {
+
+    left: 89%;
+    top: 72%;
+
+    font-size: 45px;
+
+    animation-duration: 11s;
+    animation-delay: 3s;
+}
+
+
+.heart:nth-child(9) {
+
+    left: 2%;
+    top: 48%;
+
+    font-size: 35px;
+
     animation-duration: 9s;
     animation-delay: 4s;
 }
 
-.heart:nth-child(7) {
-    left: 73%;
-    top: 30%;
-    font-size: 17px;
-    animation-duration: 7s;
-    animation-delay: 1s;
-}
 
-.heart:nth-child(8) {
-    left: 83%;
-    top: 70%;
-    font-size: 12px;
-    animation-duration: 10s;
-    animation-delay: 3s;
-}
+.heart:nth-child(10) {
 
-.heart:nth-child(9) {
-    left: 93%;
-    top: 18%;
-    font-size: 9px;
+    left: 85%;
+    top: 43%;
+
+    font-size: 62px;
+
     animation-duration: 8s;
+    animation-delay: 2s;
+}
+
+
+.heart:nth-child(11) {
+
+    left: 14%;
+    top: 34%;
+
+    font-size: 32px;
+
+    animation-duration: 12s;
     animation-delay: 5s;
 }
 
-.heart:nth-child(10) {
-    left: 11%;
-    top: 88%;
-    font-size: 15px;
-    animation-duration: 9s;
-    animation-delay: 4s;
-}
 
-.heart:nth-child(11) {
-    left: 37%;
-    top: 48%;
-    font-size: 9px;
-    animation-duration: 11s;
+.heart:nth-child(12) {
+
+    left: 60%;
+    top: 35%;
+
+    font-size: 38px;
+
+    animation-duration: 10s;
     animation-delay: 1s;
 }
 
-.heart:nth-child(12) {
-    left: 88%;
-    top: 48%;
-    font-size: 15px;
-    animation-duration: 8s;
-    animation-delay: 2s;
-}
 
-
-/* ---------------------------------------------------------
+/* =========================================================
    HEART ANIMATION
---------------------------------------------------------- */
+========================================================= */
 
 @keyframes floatHeart {
 
     0% {
-        opacity: 0;
-        transform: translateY(25px) rotate(-10deg);
+
+        opacity: 0.18;
+
+        transform:
+            translateY(20px)
+            rotate(-8deg)
+            scale(0.95);
     }
 
-    20% {
-        opacity: 0.8;
-    }
 
     50% {
-        opacity: 1;
-        transform: translateY(-15px) rotate(8deg);
+
+        opacity: 0.75;
+
+        transform:
+            translateY(-22px)
+            rotate(8deg)
+            scale(1.05);
     }
 
-    80% {
-        opacity: 0.7;
-    }
 
     100% {
-        opacity: 0;
-        transform: translateY(-45px) rotate(-8deg);
+
+        opacity: 0.18;
+
+        transform:
+            translateY(20px)
+            rotate(-8deg)
+            scale(0.95);
     }
 }
 
@@ -221,17 +305,19 @@ body {
 /* =========================================================
    WELCOME OCTOBER
 ========================================================= */
+
 .welcome-text {
+
     position: absolute;
 
-    z-index: 20;
+    z-index: 10;
 
     left: 50%;
     top: 18%;
 
     transform: translateX(-50%);
 
-    width: 55%;
+    width: 50%;
 
     text-align: center;
 
@@ -239,14 +325,20 @@ body {
 
     font-family: "Itim", sans-serif;
 
-    font-size: clamp(40px, 5vw, 78px);
+    font-size: clamp(
+        42px,
+        5vw,
+        78px
+    );
 
     line-height: 1.25;
 
     pointer-events: none;
 }
 
+
 .welcome-text div {
+
     white-space: nowrap;
 }
 
@@ -255,35 +347,53 @@ body {
    MUSIC PLAYER
    For you.png
 ========================================================= */
+
 .music-player {
+
     position: absolute;
 
-    z-index: 18;
+    z-index: 15;
 
-    left: clamp(25px, 3.1vw, 55px);
+    left: clamp(
+        25px,
+        6vw,
+        100px
+    );
 
-    bottom: clamp(25px, 5.5vh, 65px);
+    bottom: clamp(
+        35px,
+        7vh,
+        80px
+    );
 
-    width: clamp(360px, 35vw, 500px);
+    width: clamp(
+        360px,
+        34vw,
+        520px
+    );
 
     transition:
-        transform .3s ease,
-        filter .3s ease;
+        transform 0.3s ease;
 }
 
+
 .music-player img {
+
     display: block;
 
     width: 100%;
     height: auto;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
 
+
 .music-player:hover {
-    transform: translateY(-5px);
-    filter: brightness(1.04);
+
+    transform:
+        translateY(-5px);
 }
 
 
@@ -291,122 +401,113 @@ body {
    POLAROID
    For you2.png
 ========================================================= */
+
 .polaroid {
+
     position: absolute;
 
-    z-index: 15;
+    z-index: 12;
 
-    right: 7%;
-    top: 20%;
+    width: clamp(
+        210px,
+        19vw,
+        330px
+    );
 
-    width: clamp(190px, 18vw, 280px);
+    right: clamp(
+        50px,
+        8vw,
+        150px
+    );
 
-    transform: rotate(10deg) scale(1.35);
+    top: clamp(
+        90px,
+        20vh,
+        190px
+    );
+
+    transform:
+        rotate(10deg);
 
     transform-origin: center center;
 
-    transition: transform .35s ease;
+    transition:
+        transform 0.35s ease;
 }
+
 
 .polaroid img {
+
     display: block;
 
     width: 100%;
     height: auto;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
+
 
 .polaroid:hover {
-    transform: rotate(7deg) scale(1.4);
-}
 
-
-/* =========================================================
-   DOG
-   For you3.png
-========================================================= */
-.dog {
-    position: absolute;
-
-    z-index: 25;
-}
-
-.dog img {
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-
-/* ---------------------------------------------------------
-   DOG BOTTOM RIGHT
---------------------------------------------------------- */
-
-.dog-bottom {
-    width: clamp(160px, 18vw, 270px);
-
-    right: -2%;
-    bottom: -2%;
-
-    transform: scale(1.35);
-
-    transform-origin: bottom right;
-}
-
-
-/* ---------------------------------------------------------
-   DOG TOP LEFT
---------------------------------------------------------- */
-
-.dog-top {
-    display: none;
+    transform:
+        rotate(7deg)
+        scale(1.03);
 }
 
 
 /* =========================================================
    TABLET / IPAD
 ========================================================= */
-@media (min-width: 768px) and (max-width: 1199px) {
+
+@media
+(min-width: 768px)
+and (max-width: 1199px) {
 
     .welcome-text {
-        display: none;
+
+        font-size:
+            clamp(
+                48px,
+                6vw,
+                72px
+            );
+
+        top: 17%;
     }
+
 
     .music-player {
-        width: clamp(300px, 38vw, 440px);
+
+        width:
+            clamp(
+                320px,
+                42vw,
+                470px
+            );
 
         left: 4vw;
-        bottom: 6vh;
+
+        bottom: 7vh;
     }
+
 
     .polaroid {
-        width: clamp(180px, 22vw, 270px);
+
+        width:
+            clamp(
+                190px,
+                24vw,
+                290px
+            );
 
         right: 7vw;
-        top: 19vh;
 
-        transform: rotate(10deg) scale(1.35);
-    }
+        top: 18vh;
 
-    .dog-bottom {
-        width: clamp(160px, 22vw, 275px);
-
-        right: -2vw;
-        bottom: -5px;
-
-        transform: scale(1.35);
-
-        transform-origin: bottom right;
-    }
-
-    .dog-top {
-        display: none;
+        transform:
+            rotate(10deg);
     }
 }
 
@@ -414,110 +515,207 @@ body {
 /* =========================================================
    IPAD PORTRAIT
 ========================================================= */
-@media (min-width: 768px)
-       and (max-width: 1199px)
-       and (orientation: portrait) {
 
-    .music-player {
-        width: 48vw;
+@media
+(min-width: 768px)
+and (max-width: 1199px)
+and (orientation: portrait) {
 
-        left: 4vw;
-        bottom: 7vh;
+    .welcome-text {
+
+        top: 18%;
+
+        width: 70%;
+
+        font-size:
+            clamp(
+                48px,
+                8vw,
+                70px
+            );
     }
+
 
     .polaroid {
-        width: 24vw;
+
+        width: 27vw;
 
         right: 6vw;
-        top: 20vh;
 
-        transform: rotate(10deg) scale(1.35);
+        top: 16vh;
+
+        transform:
+            rotate(10deg);
     }
 
-    .dog-bottom {
-        width: 23vw;
 
-        right: -1vw;
-        bottom: 0;
+    .music-player {
 
-        transform: scale(1.35);
+        width: 55vw;
+
+        left: 5vw;
+
+        bottom: 7vh;
     }
 }
 
 
 /* =========================================================
    MOBILE PORTRAIT
-   ใช้พื้นหลัง #FADCDC
 ========================================================= */
-@media (max-width: 767px) {
+
+@media
+(max-width: 767px)
+and (orientation: portrait) {
+
 
     .welcome-text {
-        display: block;
 
-        left: 50%;
-        top: 12%;
+        z-index: 10;
 
-        width: 62%;
+        top: 19%;
 
-        font-size: clamp(38px, 11vw, 75px);
+        width: 80%;
 
-        line-height: 1.25;
+        font-size:
+            clamp(
+                40px,
+                11vw,
+                62px
+            );
+
+        line-height: 1.28;
     }
 
 
-    /* POLAROID */
+    /* -------------------------
+       POLAROID
+    ------------------------- */
+
     .polaroid {
-        width: clamp(155px, 40vw, 240px);
 
-        right: 3%;
-        top: 4%;
+        z-index: 12;
 
-        transform: rotate(10deg) scale(1.35);
+        width:
+            clamp(
+                185px,
+                43vw,
+                260px
+            );
 
-        transform-origin: center center;
+        right: 4vw;
+
+        top: 8vh;
+
+        transform:
+            rotate(10deg);
     }
 
 
-    /* MUSIC PLAYER */
+    /* -------------------------
+       MUSIC
+    ------------------------- */
+
     .music-player {
-        width: clamp(300px, 76vw, 500px);
+
+        z-index: 15;
+
+        width:
+            clamp(
+                300px,
+                78vw,
+                480px
+            );
 
         left: 50%;
-        bottom: 8%;
 
-        transform: translateX(-50%);
+        bottom: 8vh;
+
+        transform:
+            translateX(-50%);
     }
+
 
     .music-player:hover {
-        transform: translateX(-50%);
+
+        transform:
+            translateX(-50%);
     }
 
 
-    /* DOG BOTTOM */
-    .dog-bottom {
-        width: clamp(150px, 37vw, 230px);
+    /* -------------------------
+       HEARTS
+    ------------------------- */
 
-        right: -4%;
-        bottom: -2%;
+    .heart:nth-child(1) {
 
-        transform: scale(1.4);
-
-        transform-origin: bottom right;
+        font-size: 40px;
     }
 
 
-    /* DOG TOP */
-    .dog-top {
-        display: block;
+    .heart:nth-child(2) {
 
-        width: clamp(125px, 33vw, 205px);
+        font-size: 30px;
+    }
 
-        left: -7%;
-        top: -2%;
 
-        transform: rotate(180deg) scale(1.25);
+    .heart:nth-child(3) {
 
-        transform-origin: center center;
+        font-size: 55px;
+    }
+
+
+    .heart:nth-child(4) {
+
+        font-size: 35px;
+    }
+
+
+    .heart:nth-child(5) {
+
+        font-size: 45px;
+    }
+
+
+    .heart:nth-child(6) {
+
+        font-size: 30px;
+    }
+
+
+    .heart:nth-child(7) {
+
+        font-size: 50px;
+    }
+
+
+    .heart:nth-child(8) {
+
+        font-size: 35px;
+    }
+
+
+    .heart:nth-child(9) {
+
+        font-size: 28px;
+    }
+
+
+    .heart:nth-child(10) {
+
+        font-size: 45px;
+    }
+
+
+    .heart:nth-child(11) {
+
+        font-size: 25px;
+    }
+
+
+    .heart:nth-child(12) {
+
+        font-size: 30px;
     }
 }
 
@@ -525,47 +723,45 @@ body {
 /* =========================================================
    SMALL PHONE
 ========================================================= */
-@media (max-width: 420px) {
+
+@media
+(max-width: 420px)
+and (orientation: portrait) {
+
 
     .welcome-text {
-        top: 12%;
 
-        width: 66%;
+        top: 19%;
 
-        font-size: clamp(35px, 11vw, 55px);
+        width: 85%;
+
+        font-size:
+            clamp(
+                36px,
+                11vw,
+                52px
+            );
     }
+
 
     .polaroid {
-        width: 39vw;
+
+        width: 42vw;
 
         right: 3vw;
-        top: 3%;
 
-        transform: rotate(10deg) scale(1.35);
+        top: 7vh;
+
+        transform:
+            rotate(10deg);
     }
+
 
     .music-player {
+
         width: 82vw;
 
-        bottom: 7%;
-    }
-
-    .dog-bottom {
-        width: 36vw;
-
-        right: -4vw;
-        bottom: 0;
-
-        transform: scale(1.4);
-    }
-
-    .dog-top {
-        width: 33vw;
-
-        left: -8vw;
-        top: -1%;
-
-        transform: rotate(180deg) scale(1.25);
+        bottom: 7vh;
     }
 }
 
@@ -573,47 +769,35 @@ body {
 /* =========================================================
    VERY SMALL PHONE
 ========================================================= */
-@media (max-width: 360px) {
+
+@media
+(max-width: 360px)
+and (orientation: portrait) {
+
 
     .welcome-text {
-        top: 11%;
 
-        width: 70%;
+        top: 18%;
 
         font-size: 35px;
     }
 
+
     .polaroid {
-        width: 40vw;
 
-        right: 2vw;
-        top: 3%;
+        width: 41vw;
 
-        transform: rotate(10deg) scale(1.35);
+        right: 3vw;
+
+        top: 6vh;
     }
+
 
     .music-player {
+
         width: 86vw;
 
-        bottom: 6%;
-    }
-
-    .dog-bottom {
-        width: 38vw;
-
-        right: -4vw;
-        bottom: 0;
-
-        transform: scale(1.4);
-    }
-
-    .dog-top {
-        width: 35vw;
-
-        left: -8vw;
-        top: -1%;
-
-        transform: rotate(180deg) scale(1.25);
+        bottom: 6vh;
     }
 }
 
@@ -621,49 +805,47 @@ body {
 /* =========================================================
    PHONE LANDSCAPE
 ========================================================= */
-@media (max-width: 767px) and (orientation: landscape) {
+
+@media
+(max-width: 767px)
+and (orientation: landscape) {
+
 
     .welcome-text {
+
         display: none;
     }
 
-    .dog-top {
-        display: none;
+
+    .polaroid {
+
+        width: 24vw;
+
+        right: 9vw;
+
+        top: 8vh;
+
+        transform:
+            rotate(10deg);
     }
+
 
     .music-player {
-        width: 40vw;
+
+        width: 42vw;
 
         left: 4vw;
+
         bottom: 5vh;
 
         transform: none;
     }
 
+
     .music-player:hover {
-        transform: translateY(-5px);
-    }
 
-    .polaroid {
-        width: 23vw;
-        max-width: 260px;
-
-        right: 10vw;
-        top: 9vh;
-
-        transform: rotate(10deg) scale(1.35);
-    }
-
-    .dog-bottom {
-        width: 21vw;
-        max-width: 240px;
-
-        right: -1vw;
-        bottom: -2px;
-
-        transform: scale(1.35);
-
-        transform-origin: bottom right;
+        transform:
+            translateY(-5px);
     }
 }
 
@@ -671,28 +853,34 @@ body {
 /* =========================================================
    REDUCE MOTION
 ========================================================= */
-@media (prefers-reduced-motion: reduce) {
+
+@media
+(prefers-reduced-motion: reduce) {
 
     * {
-        transition: none !important;
+
         animation: none !important;
+
+        transition: none !important;
     }
 }
 
 </style>
+
 </head>
 
 
 <body>
+
 
 <div class="page">
 
     <div class="content">
 
 
-        <!-- =================================================
-             หัวใจลอย
-        ================================================== -->
+        <!-- ================================================
+             FLOATING HEARTS
+        ================================================= -->
 
         <div class="hearts">
 
@@ -712,9 +900,9 @@ body {
         </div>
 
 
-        <!-- =================================================
+        <!-- ================================================
              WELCOME
-        ================================================== -->
+        ================================================= -->
 
         <div class="welcome-text">
 
@@ -725,37 +913,9 @@ body {
         </div>
 
 
-        <!-- =================================================
-             DOG TOP LEFT
-        ================================================== -->
-
-        <div class="dog dog-top">
-
-            <img
-                src="For you3.png"
-                alt="Dog"
-            >
-
-        </div>
-
-
-        <!-- =================================================
-             MUSIC PLAYER
-        ================================================== -->
-
-        <div class="music-player">
-
-            <img
-                src="For you.png"
-                alt="Music player"
-            >
-
-        </div>
-
-
-        <!-- =================================================
+        <!-- ================================================
              POLAROID
-        ================================================== -->
+        ================================================= -->
 
         <div class="polaroid">
 
@@ -767,15 +927,15 @@ body {
         </div>
 
 
-        <!-- =================================================
-             DOG BOTTOM RIGHT
-        ================================================== -->
+        <!-- ================================================
+             MUSIC PLAYER
+        ================================================= -->
 
-        <div class="dog dog-bottom">
+        <div class="music-player">
 
             <img
-                src="For you3.png"
-                alt="Dog"
+                src="For you.png"
+                alt="Music player"
             >
 
         </div>
@@ -792,32 +952,45 @@ body {
    ป้องกันรูปถูกลาก
 ========================================================= */
 
-document.querySelectorAll("img").forEach(function(img) {
+document
+.querySelectorAll("img")
+.forEach(function(img) {
 
-    img.addEventListener("dragstart", function(event) {
+    img.addEventListener(
+        "dragstart",
+        function(event) {
 
-        event.preventDefault();
+            event.preventDefault();
 
-    });
+        }
+    );
 
 });
 
 
 /* =========================================================
-   เมื่อหมุนหน้าจอ
+   ปรับหน้าจอหลังหมุนมือถือ
 ========================================================= */
 
-window.addEventListener("orientationchange", function() {
+window.addEventListener(
+    "orientationchange",
+    function() {
 
-    setTimeout(function() {
+        setTimeout(
+            function() {
 
-        window.scrollTo(0, 0);
+                window.scrollTo(0, 0);
 
-    }, 100);
+            },
+            100
+        );
 
-});
+    }
+);
 
 </script>
 
+
 </body>
+
 </html>
