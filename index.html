@@ -38,16 +38,14 @@ body {
 
 
 /* =========================================================
-   MAIN PAGE
+   MAIN
    คอม + iPad = c.png
    มือถือแนวตั้ง = f.png
 ========================================================= */
 .page {
     position: relative;
-
     width: 100%;
     min-height: 100svh;
-
     overflow: hidden;
 
     background-image: url("c.png");
@@ -58,7 +56,6 @@ body {
 
 .content {
     position: relative;
-
     width: 100%;
     min-height: 100svh;
 }
@@ -69,7 +66,6 @@ body {
 ========================================================= */
 .welcome-text {
     position: absolute;
-
     z-index: 20;
 
     left: 50%;
@@ -87,7 +83,6 @@ body {
     font-weight: normal;
 
     font-size: clamp(40px, 5vw, 78px);
-
     line-height: 1.25;
 
     pointer-events: none;
@@ -104,11 +99,9 @@ body {
 ========================================================= */
 .music-player {
     position: absolute;
-
     z-index: 18;
 
     left: clamp(25px, 3.1vw, 55px);
-
     bottom: clamp(25px, 5.5vh, 65px);
 
     width: clamp(360px, 35vw, 500px);
@@ -120,18 +113,15 @@ body {
 
 .music-player img {
     display: block;
-
     width: 100%;
     height: auto;
 
     user-select: none;
-
     -webkit-user-drag: none;
 }
 
 .music-player:hover {
     transform: translateY(-5px);
-
     filter: brightness(1.04);
 }
 
@@ -142,36 +132,30 @@ body {
 ========================================================= */
 .polaroid {
     position: absolute;
-
     z-index: 15;
 
-    right: clamp(30px, 5vw, 100px);
+    right: 7%;
+    top: 20%;
 
-    top: clamp(90px, 18vh, 190px);
+    width: clamp(190px, 18vw, 280px);
 
-    /* ใหญ่ขึ้น */
-    width: clamp(230px, 23vw, 350px);
+    transform: rotate(10deg) scale(1.35);
+    transform-origin: center center;
 
-    transform: rotate(10deg);
-
-    transition:
-        transform .35s ease,
-        filter .3s ease;
+    transition: transform .35s ease;
 }
 
 .polaroid img {
     display: block;
-
     width: 100%;
     height: auto;
 
     user-select: none;
-
     -webkit-user-drag: none;
 }
 
 .polaroid:hover {
-    transform: rotate(7deg) scale(1.03);
+    transform: rotate(7deg) scale(1.4);
 }
 
 
@@ -181,34 +165,32 @@ body {
 ========================================================= */
 .dog {
     position: absolute;
-
     z-index: 25;
 }
 
 .dog img {
     display: block;
-
     width: 100%;
     height: auto;
 
     user-select: none;
-
     -webkit-user-drag: none;
 }
 
 
 /* หมาใหญ่ขวาล่าง */
 .dog-bottom {
-    width: clamp(200px, 21vw, 320px);
+    width: clamp(160px, 18vw, 270px);
 
-    right: clamp(-25px, -1vw, 0px);
+    right: -2%;
+    bottom: -2%;
 
-    bottom: clamp(-25px, -1vh, 0px);
+    transform: scale(1.35);
+    transform-origin: bottom right;
 }
 
 
-/* หัวหมาซ้ายบน
-   ปกติซ่อนบนคอม/iPad */
+/* หัวหมาซ้ายบน */
 .dog-top {
     display: none;
 }
@@ -221,9 +203,7 @@ body {
 
     .page {
         background-image: url("c.png");
-
         background-size: cover;
-
         background-position: center center;
     }
 
@@ -231,31 +211,30 @@ body {
         display: none;
     }
 
-    /* เพลง */
     .music-player {
         width: clamp(300px, 38vw, 440px);
-
         left: 4vw;
-
         bottom: 6vh;
     }
 
-    /* โพลารอยด์ */
     .polaroid {
-        width: clamp(220px, 27vw, 340px);
+        width: clamp(180px, 22vw, 270px);
 
-        right: 5vw;
-
+        right: 7vw;
         top: 19vh;
+
+        transform: rotate(10deg) scale(1.35);
+        transform-origin: center center;
     }
 
-    /* หมา */
     .dog-bottom {
-        width: clamp(190px, 25vw, 315px);
+        width: clamp(160px, 22vw, 275px);
 
-        right: -1vw;
-
+        right: -2vw;
         bottom: -5px;
+
+        transform: scale(1.35);
+        transform-origin: bottom right;
     }
 
     .dog-top {
@@ -271,31 +250,29 @@ body {
        and (max-width: 1199px)
        and (orientation: portrait) {
 
-    /* เพลง */
     .music-player {
         width: 48vw;
-
         left: 4vw;
-
         bottom: 7vh;
     }
 
-    /* โพลารอยด์ */
     .polaroid {
-        width: clamp(240px, 32vw, 360px);
+        width: 24vw;
 
-        right: 5vw;
-
+        right: 6vw;
         top: 20vh;
+
+        transform: rotate(10deg) scale(1.35);
     }
 
-    /* หมา */
     .dog-bottom {
-        width: clamp(210px, 29vw, 330px);
+        width: 23vw;
 
         right: -1vw;
-
         bottom: 0;
+
+        transform: scale(1.35);
+        transform-origin: bottom right;
     }
 }
 
@@ -308,67 +285,41 @@ body {
 
     .page {
         background-image: url("f.png");
-
         background-size: cover;
-
         background-position: center top;
-
         background-repeat: no-repeat;
-
-        min-height: 100svh;
     }
-
-    .content {
-        min-height: 100svh;
-    }
-
-
-    /* -------------------------
-       Welcome
-    ------------------------- */
 
     .welcome-text {
-
         display: block;
 
         left: 50%;
-
         top: 12%;
 
         width: 62%;
 
         font-size: clamp(38px, 11vw, 75px);
-
         line-height: 1.25;
     }
 
 
-    /* -------------------------
-       Polaroid
-    ------------------------- */
-
+    /* POLAROID */
     .polaroid {
+        width: clamp(155px, 40vw, 240px);
 
-        width: clamp(200px, 48vw, 290px);
-
-        right: 1%;
-
+        right: 3%;
         top: 4%;
 
-        transform: rotate(10deg);
+        transform: rotate(10deg) scale(1.35);
+        transform-origin: center center;
     }
 
 
-    /* -------------------------
-       Music
-    ------------------------- */
-
+    /* MUSIC */
     .music-player {
-
         width: clamp(300px, 76vw, 500px);
 
         left: 50%;
-
         bottom: 8%;
 
         transform: translateX(-50%);
@@ -379,35 +330,29 @@ body {
     }
 
 
-    /* -------------------------
-       หมาใหญ่ขวาล่าง
-    ------------------------- */
-
+    /* หมาใหญ่ขวาล่าง */
     .dog-bottom {
+        width: clamp(150px, 37vw, 230px);
 
-        width: clamp(180px, 43vw, 260px);
+        right: -4%;
+        bottom: -2%;
 
-        right: -5%;
-
-        bottom: -1%;
+        transform: scale(1.4);
+        transform-origin: bottom right;
     }
 
 
-    /* -------------------------
-       หัวหมาซ้ายบน
-    ------------------------- */
-
+    /* หัวหมาซ้ายบน */
     .dog-top {
-
         display: block;
 
-        width: clamp(145px, 38vw, 225px);
+        width: clamp(125px, 33vw, 205px);
 
-        left: -8%;
-
+        left: -7%;
         top: -2%;
 
-        transform: rotate(180deg);
+        transform: rotate(180deg) scale(1.25);
+        transform-origin: center center;
     }
 }
 
@@ -418,50 +363,42 @@ body {
 @media (max-width: 420px) {
 
     .welcome-text {
-
         top: 12%;
-
         width: 66%;
-
         font-size: clamp(35px, 11vw, 55px);
     }
 
-
     .polaroid {
-
-        width: clamp(195px, 49vw, 255px);
+        width: 39vw;
 
         right: 3vw;
-
         top: 3%;
+
+        transform: rotate(10deg) scale(1.35);
     }
 
-
     .music-player {
-
         width: 82vw;
-
         bottom: 7%;
     }
 
-
     .dog-bottom {
-
-        width: clamp(170px, 43vw, 225px);
+        width: 36vw;
 
         right: -4vw;
-
         bottom: 0;
+
+        transform: scale(1.4);
+        transform-origin: bottom right;
     }
 
-
     .dog-top {
+        width: 33vw;
 
-        width: clamp(135px, 37vw, 200px);
-
-        left: -9vw;
-
+        left: -8vw;
         top: -1%;
+
+        transform: rotate(180deg) scale(1.25);
     }
 }
 
@@ -472,46 +409,41 @@ body {
 @media (max-width: 360px) {
 
     .welcome-text {
-
         top: 11%;
-
         width: 70%;
-
         font-size: 35px;
     }
 
-
     .polaroid {
-
-        width: 49vw;
+        width: 40vw;
 
         right: 2vw;
-
         top: 3%;
+
+        transform: rotate(10deg) scale(1.35);
     }
 
-
     .music-player {
-
         width: 86vw;
-
         bottom: 6%;
     }
 
-
     .dog-bottom {
-
-        width: 43vw;
+        width: 38vw;
 
         right: -4vw;
+        bottom: 0;
+
+        transform: scale(1.4);
     }
 
-
     .dog-top {
+        width: 35vw;
 
-        width: 39vw;
+        left: -8vw;
+        top: -1%;
 
-        left: -9vw;
+        transform: rotate(180deg) scale(1.25);
     }
 }
 
@@ -523,31 +455,22 @@ body {
 @media (max-width: 767px) and (orientation: landscape) {
 
     .page {
-
         background-image: url("c.png");
-
         background-position: center center;
     }
-
 
     .welcome-text {
         display: none;
     }
 
-
     .dog-top {
         display: none;
     }
 
-
     .music-player {
-
         width: 40vw;
-
         left: 4vw;
-
         bottom: 5vh;
-
         transform: none;
     }
 
@@ -555,28 +478,25 @@ body {
         transform: translateY(-5px);
     }
 
-
     .polaroid {
-
-        width: 27vw;
-
-        max-width: 280px;
+        width: 23vw;
+        max-width: 260px;
 
         right: 10vw;
-
         top: 9vh;
+
+        transform: rotate(10deg) scale(1.35);
     }
 
-
     .dog-bottom {
+        width: 21vw;
+        max-width: 240px;
 
-        width: 24vw;
-
-        max-width: 250px;
-
-        right: 0;
-
+        right: -1vw;
         bottom: -2px;
+
+        transform: scale(1.35);
+        transform-origin: bottom right;
     }
 }
 
@@ -588,7 +508,6 @@ body {
 
     * {
         scroll-behavior: auto !important;
-
         transition: none !important;
     }
 }
@@ -612,37 +531,25 @@ body {
 
         <!-- หัวหมาซ้ายบนมือถือ -->
         <div class="dog dog-top">
-            <img
-                src="For you3.png"
-                alt="Dog"
-            >
+            <img src="For you3.png" alt="Dog">
         </div>
 
 
         <!-- เครื่องเล่นเพลง -->
         <div class="music-player">
-            <img
-                src="For you.png"
-                alt="Music player"
-            >
+            <img src="For you.png" alt="Music player">
         </div>
 
 
         <!-- โพลารอยด์ -->
         <div class="polaroid">
-            <img
-                src="For you2.png"
-                alt="Polaroid photos"
-            >
+            <img src="For you2.png" alt="Polaroid photos">
         </div>
 
 
         <!-- หมาใหญ่ขวาล่าง -->
         <div class="dog dog-bottom">
-            <img
-                src="For you3.png"
-                alt="Dog"
-            >
+            <img src="For you3.png" alt="Dog">
         </div>
 
     </div>
@@ -652,31 +559,21 @@ body {
 
 <script>
 
-/* =========================================================
-   ป้องกันรูปถูกลาก
-========================================================= */
-
+/* ป้องกันรูปถูกลาก */
 document.querySelectorAll("img").forEach(function (img) {
 
     img.addEventListener("dragstart", function (event) {
-
         event.preventDefault();
-
     });
 
 });
 
 
-/* =========================================================
-   เมื่อหมุนหน้าจอ
-========================================================= */
-
+/* เมื่อหมุนหน้าจอ */
 window.addEventListener("orientationchange", function () {
 
     setTimeout(function () {
-
         window.scrollTo(0, 0);
-
     }, 100);
 
 });
