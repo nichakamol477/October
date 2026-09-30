@@ -12,7 +12,6 @@
 
 <title>Welcome October ♡</title>
 
-
 <style>
 
 /* =========================================================
@@ -32,31 +31,27 @@
     box-sizing: border-box;
 }
 
-
 html,
 body {
     width: 100%;
-    min-height: 100%;
+    height: 100%;
 }
 
-
 body {
-
     overflow: hidden;
-
     background: #F6C6C7;
-
     font-family: "Itim", sans-serif;
 }
 
 
 /* =========================================================
-   MAIN PAGE
+   ทุกหน้า
 ========================================================= */
 
 .page {
+    position: absolute;
 
-    position: relative;
+    inset: 0;
 
     width: 100%;
     height: 100svh;
@@ -64,25 +59,53 @@ body {
     overflow: hidden;
 
     background: #F6C6C7;
+
+    transition:
+        opacity 0.7s ease,
+        visibility 0.7s ease;
 }
 
 
-.content {
+/* หน้าแรก */
 
-    position: relative;
+#page1 {
+    opacity: 1;
+    visibility: visible;
+}
 
-    width: 100%;
-    height: 100%;
+
+/* หน้าที่ 2 ซ่อนไว้ก่อน */
+
+#page2 {
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+/* เมื่อเปลี่ยนหน้า */
+
+body.next-page #page1 {
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+body.next-page #page2 {
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
 }
 
 
 /* =========================================================
-   FLOATING HEARTS
-   หัวใจสีขาวใหญ่ด้านหลัง
+   HEARTS
 ========================================================= */
 
 .hearts {
-
     position: absolute;
 
     inset: 0;
@@ -90,187 +113,123 @@ body {
     z-index: 1;
 
     pointer-events: none;
-
-    overflow: hidden;
 }
 
-
 .heart {
-
     position: absolute;
 
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255,255,255,0.75);
 
     font-family: Arial, sans-serif;
 
-    font-weight: normal;
-
     opacity: 0;
 
-    animation:
-        floatHeart
-        ease-in-out
-        infinite;
+    animation: floatHeart ease-in-out infinite;
 }
 
 
-/* =========================================================
-   HEART POSITIONS
-========================================================= */
+/* ตำแหน่งหัวใจ */
 
 .heart:nth-child(1) {
-
-    left: 5%;
-    top: 13%;
-
-    font-size: 55px;
-
+    left: 4%;
+    top: 12%;
+    font-size: 58px;
     animation-duration: 8s;
-    animation-delay: 0s;
 }
-
 
 .heart:nth-child(2) {
-
-    left: 17%;
-    top: 70%;
-
-    font-size: 38px;
-
+    left: 16%;
+    top: 68%;
+    font-size: 42px;
     animation-duration: 10s;
     animation-delay: 2s;
 }
-
 
 .heart:nth-child(3) {
-
-    left: 29%;
+    left: 27%;
     top: 22%;
-
-    font-size: 75px;
-
+    font-size: 78px;
     animation-duration: 9s;
     animation-delay: 1s;
 }
 
-
 .heart:nth-child(4) {
-
     left: 42%;
     top: 76%;
-
-    font-size: 48px;
-
+    font-size: 45px;
     animation-duration: 11s;
     animation-delay: 3s;
 }
 
-
 .heart:nth-child(5) {
-
     left: 53%;
-    top: 9%;
-
-    font-size: 60px;
-
+    top: 7%;
+    font-size: 62px;
     animation-duration: 8s;
     animation-delay: 2s;
 }
 
-
 .heart:nth-child(6) {
-
     left: 65%;
-    top: 58%;
-
-    font-size: 42px;
-
+    top: 57%;
+    font-size: 44px;
     animation-duration: 10s;
     animation-delay: 4s;
 }
 
-
 .heart:nth-child(7) {
-
-    left: 77%;
+    left: 78%;
     top: 17%;
-
-    font-size: 70px;
-
+    font-size: 75px;
     animation-duration: 9s;
     animation-delay: 1s;
 }
 
-
 .heart:nth-child(8) {
-
-    left: 89%;
-    top: 72%;
-
-    font-size: 45px;
-
+    left: 91%;
+    top: 70%;
+    font-size: 48px;
     animation-duration: 11s;
     animation-delay: 3s;
 }
 
-
 .heart:nth-child(9) {
-
     left: 2%;
-    top: 48%;
-
+    top: 47%;
     font-size: 35px;
-
     animation-duration: 9s;
     animation-delay: 4s;
 }
 
-
 .heart:nth-child(10) {
-
-    left: 85%;
+    left: 86%;
     top: 43%;
-
-    font-size: 62px;
-
+    font-size: 65px;
     animation-duration: 8s;
     animation-delay: 2s;
 }
 
-
 .heart:nth-child(11) {
-
     left: 14%;
     top: 34%;
-
     font-size: 32px;
-
     animation-duration: 12s;
     animation-delay: 5s;
 }
 
-
 .heart:nth-child(12) {
-
     left: 60%;
-    top: 35%;
-
-    font-size: 38px;
-
+    top: 34%;
+    font-size: 40px;
     animation-duration: 10s;
     animation-delay: 1s;
 }
 
 
-/* =========================================================
-   HEART ANIMATION
-========================================================= */
-
 @keyframes floatHeart {
 
     0% {
-
-        opacity: 0.18;
+        opacity: 0.15;
 
         transform:
             translateY(20px)
@@ -278,21 +237,17 @@ body {
             scale(0.95);
     }
 
-
     50% {
-
         opacity: 0.75;
 
         transform:
-            translateY(-22px)
+            translateY(-25px)
             rotate(8deg)
-            scale(1.05);
+            scale(1.06);
     }
 
-
     100% {
-
-        opacity: 0.18;
+        opacity: 0.15;
 
         transform:
             translateY(20px)
@@ -303,7 +258,7 @@ body {
 
 
 /* =========================================================
-   WELCOME OCTOBER
+   WELCOME
 ========================================================= */
 
 .welcome-text {
@@ -313,7 +268,7 @@ body {
     z-index: 10;
 
     left: 50%;
-    top: 18%;
+    top: 17%;
 
     transform: translateX(-50%);
 
@@ -323,83 +278,19 @@ body {
 
     color: #000;
 
-    font-family: "Itim", sans-serif;
-
-    font-size: clamp(
-        42px,
-        5vw,
-        78px
-    );
+    font-size:
+        clamp(45px, 5vw, 78px);
 
     line-height: 1.25;
-
-    pointer-events: none;
 }
 
-
 .welcome-text div {
-
     white-space: nowrap;
 }
 
 
 /* =========================================================
-   MUSIC PLAYER
-   For you.png
-========================================================= */
-
-.music-player {
-
-    position: absolute;
-
-    z-index: 15;
-
-    left: clamp(
-        25px,
-        6vw,
-        100px
-    );
-
-    bottom: clamp(
-        35px,
-        7vh,
-        80px
-    );
-
-    width: clamp(
-        360px,
-        34vw,
-        520px
-    );
-
-    transition:
-        transform 0.3s ease;
-}
-
-
-.music-player img {
-
-    display: block;
-
-    width: 100%;
-    height: auto;
-
-    user-select: none;
-
-    -webkit-user-drag: none;
-}
-
-
-.music-player:hover {
-
-    transform:
-        translateY(-5px);
-}
-
-
-/* =========================================================
    POLAROID
-   For you2.png
 ========================================================= */
 
 .polaroid {
@@ -408,33 +299,31 @@ body {
 
     z-index: 12;
 
-    width: clamp(
-        210px,
-        19vw,
-        330px
-    );
+    width:
+        clamp(
+            210px,
+            19vw,
+            330px
+        );
 
-    right: clamp(
-        50px,
-        8vw,
-        150px
-    );
+    /* อยู่ทางขวามากขึ้น */
 
-    top: clamp(
-        90px,
-        20vh,
-        190px
-    );
+    right:
+        clamp(
+            20px,
+            3vw,
+            60px
+        );
 
-    transform:
-        rotate(10deg);
+    top:
+        clamp(
+            90px,
+            17vh,
+            180px
+        );
 
-    transform-origin: center center;
-
-    transition:
-        transform 0.35s ease;
+    transform: rotate(10deg);
 }
-
 
 .polaroid img {
 
@@ -442,126 +331,278 @@ body {
 
     width: 100%;
     height: auto;
-
-    user-select: none;
-
-    -webkit-user-drag: none;
 }
 
 
-.polaroid:hover {
+/* =========================================================
+   MUSIC PLAYER
+========================================================= */
+
+.music-player {
+
+    position: absolute;
+
+    z-index: 15;
+
+    left:
+        clamp(
+            30px,
+            4vw,
+            70px
+        );
+
+    bottom:
+        clamp(
+            30px,
+            7vh,
+            80px
+        );
+
+    width:
+        clamp(
+            360px,
+            34vw,
+            520px
+        );
+}
+
+.music-player img {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   GIFT
+========================================================= */
+
+.gift-container {
+
+    position: absolute;
+
+    z-index: 30;
+
+    left: 50%;
+    top: 53%;
 
     transform:
-        rotate(7deg)
-        scale(1.03);
+        translate(-50%, -50%);
+
+    width:
+        clamp(
+            210px,
+            24vw,
+            350px
+        );
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+
+/* กล่องปิด */
+
+.gift-box {
+
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* เอฟเฟกต์ตอนเอาเมาส์ไปวาง */
+
+.gift-container:hover .gift-box {
+
+    transform:
+        scale(1.05)
+        translateY(-5px);
+}
+
+
+/* ข้อความ */
+
+.click-text {
+
+    margin-top: 8px;
+
+    font-size:
+        clamp(
+            22px,
+            2.5vw,
+            34px
+        );
+
+    color: #000;
 }
 
 
 /* =========================================================
-   TABLET / IPAD
+   GIFT OPEN
 ========================================================= */
 
-@media
-(min-width: 768px)
-and (max-width: 1199px) {
+.gift-open {
 
-    .welcome-text {
+    display: none;
 
-        font-size:
-            clamp(
-                48px,
-                6vw,
-                72px
-            );
-
-        top: 17%;
-    }
+    width: 100%;
+    height: auto;
+}
 
 
-    .music-player {
+/* เมื่อเปิด */
 
-        width:
-            clamp(
-                320px,
-                42vw,
-                470px
-            );
+.gift-container.open .gift-box {
 
-        left: 4vw;
+    display: none;
+}
 
-        bottom: 7vh;
-    }
+.gift-container.open .click-text {
+
+    display: none;
+}
+
+.gift-container.open .gift-open {
+
+    display: block;
+
+    animation:
+        giftOpen
+        0.8s
+        ease-out
+        forwards;
+}
 
 
-    .polaroid {
+@keyframes giftOpen {
 
-        width:
-            clamp(
-                190px,
-                24vw,
-                290px
-            );
+    0% {
 
-        right: 7vw;
-
-        top: 18vh;
+        opacity: 0;
 
         transform:
-            rotate(10deg);
+            scale(0.5)
+            translateY(30px)
+            rotate(-5deg);
+    }
+
+    60% {
+
+        opacity: 1;
+
+        transform:
+            scale(1.08)
+            translateY(-8px)
+            rotate(2deg);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0)
+            rotate(0);
     }
 }
 
 
 /* =========================================================
-   IPAD PORTRAIT
+   PAGE 2
 ========================================================= */
 
-@media
-(min-width: 768px)
-and (max-width: 1199px)
-and (orientation: portrait) {
+.page2-content {
 
-    .welcome-text {
+    position: relative;
 
-        top: 18%;
+    width: 100%;
+    height: 100%;
 
-        width: 70%;
+    display: flex;
 
-        font-size:
-            clamp(
-                48px,
-                8vw,
-                70px
-            );
-    }
+    align-items: center;
+    justify-content: center;
+
+    flex-direction: column;
+}
 
 
-    .polaroid {
+/* กล่องเปิดตอนเปลี่ยนหน้า */
 
-        width: 27vw;
+.open-gift-big {
 
-        right: 6vw;
+    width:
+        clamp(
+            180px,
+            25vw,
+            320px
+        );
 
-        top: 16vh;
+    animation:
+        giftOpenPage
+        0.8s
+        ease-out;
+}
+
+
+@keyframes giftOpenPage {
+
+    0% {
+        opacity: 0;
 
         transform:
-            rotate(10deg);
+            scale(0.5)
+            translateY(30px);
     }
 
+    70% {
 
-    .music-player {
+        opacity: 1;
 
-        width: 55vw;
+        transform:
+            scale(1.08)
+            translateY(-5px);
+    }
 
-        left: 5vw;
+    100% {
 
-        bottom: 7vh;
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
     }
 }
 
 
+/* ข้อความหน้าที่ 2 */
+
+.page2-title {
+
+    margin-top: 20px;
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            50px
+        );
+
+    color: #000;
+}
+
+
 /* =========================================================
-   MOBILE PORTRAIT
+   MOBILE
 ========================================================= */
 
 @media
@@ -571,65 +612,59 @@ and (orientation: portrait) {
 
     .welcome-text {
 
-        z-index: 10;
+        top: 15%;
 
-        top: 19%;
-
-        width: 80%;
+        width: 85%;
 
         font-size:
             clamp(
-                40px,
+                38px,
                 11vw,
-                62px
+                60px
             );
-
-        line-height: 1.28;
     }
 
-
-    /* -------------------------
-       POLAROID
-    ------------------------- */
 
     .polaroid {
 
-        z-index: 12;
-
         width:
             clamp(
-                185px,
-                43vw,
-                260px
+                175px,
+                42vw,
+                250px
             );
 
-        right: 4vw;
+        right: 1vw;
 
-        top: 8vh;
-
-        transform:
-            rotate(10deg);
+        top: 5vh;
     }
 
 
-    /* -------------------------
-       MUSIC
-    ------------------------- */
-
-    .music-player {
-
-        z-index: 15;
+    .gift-container {
 
         width:
             clamp(
-                300px,
+                190px,
+                47vw,
+                260px
+            );
+
+        top: 52%;
+    }
+
+
+    .music-player {
+
+        width:
+            clamp(
+                290px,
                 78vw,
-                480px
+                450px
             );
 
         left: 50%;
 
-        bottom: 8vh;
+        bottom: 5vh;
 
         transform:
             translateX(-50%);
@@ -643,78 +678,53 @@ and (orientation: portrait) {
     }
 
 
-    /* -------------------------
-       HEARTS
-    ------------------------- */
+    /* หัวใจมือถือ */
 
     .heart:nth-child(1) {
-
         font-size: 40px;
     }
 
-
     .heart:nth-child(2) {
-
         font-size: 30px;
     }
 
-
     .heart:nth-child(3) {
-
         font-size: 55px;
     }
 
-
     .heart:nth-child(4) {
-
         font-size: 35px;
     }
 
-
     .heart:nth-child(5) {
-
         font-size: 45px;
     }
 
-
     .heart:nth-child(6) {
-
         font-size: 30px;
     }
 
-
     .heart:nth-child(7) {
-
         font-size: 50px;
     }
 
-
     .heart:nth-child(8) {
-
         font-size: 35px;
     }
 
-
     .heart:nth-child(9) {
-
         font-size: 28px;
     }
 
-
     .heart:nth-child(10) {
-
         font-size: 45px;
     }
 
-
     .heart:nth-child(11) {
-
         font-size: 25px;
     }
 
-
     .heart:nth-child(12) {
-
         font-size: 30px;
     }
 }
@@ -728,16 +738,13 @@ and (orientation: portrait) {
 (max-width: 420px)
 and (orientation: portrait) {
 
-
     .welcome-text {
 
-        top: 19%;
-
-        width: 85%;
+        top: 16%;
 
         font-size:
             clamp(
-                36px,
+                35px,
                 11vw,
                 52px
             );
@@ -746,70 +753,38 @@ and (orientation: portrait) {
 
     .polaroid {
 
-        width: 42vw;
+        width: 40vw;
 
-        right: 3vw;
+        right: 1vw;
 
-        top: 7vh;
+        top: 5vh;
+    }
 
-        transform:
-            rotate(10deg);
+
+    .gift-container {
+
+        width: 48vw;
+
+        top: 51%;
     }
 
 
     .music-player {
 
-        width: 82vw;
+        width: 83vw;
 
-        bottom: 7vh;
+        bottom: 5vh;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL PHONE
-========================================================= */
-
-@media
-(max-width: 360px)
-and (orientation: portrait) {
-
-
-    .welcome-text {
-
-        top: 18%;
-
-        font-size: 35px;
-    }
-
-
-    .polaroid {
-
-        width: 41vw;
-
-        right: 3vw;
-
-        top: 6vh;
-    }
-
-
-    .music-player {
-
-        width: 86vw;
-
-        bottom: 6vh;
-    }
-}
-
-
-/* =========================================================
-   PHONE LANDSCAPE
+   LANDSCAPE PHONE
 ========================================================= */
 
 @media
 (max-width: 767px)
 and (orientation: landscape) {
-
 
     .welcome-text {
 
@@ -819,49 +794,31 @@ and (orientation: landscape) {
 
     .polaroid {
 
-        width: 24vw;
+        width: 23vw;
 
-        right: 9vw;
+        right: 5vw;
 
-        top: 8vh;
+        top: 7vh;
+    }
 
-        transform:
-            rotate(10deg);
+
+    .gift-container {
+
+        width: 25vw;
+
+        top: 48%;
     }
 
 
     .music-player {
 
-        width: 42vw;
+        width: 40vw;
 
         left: 4vw;
 
         bottom: 5vh;
 
         transform: none;
-    }
-
-
-    .music-player:hover {
-
-        transform:
-            translateY(-5px);
-    }
-}
-
-
-/* =========================================================
-   REDUCE MOTION
-========================================================= */
-
-@media
-(prefers-reduced-motion: reduce) {
-
-    * {
-
-        animation: none !important;
-
-        transition: none !important;
     }
 }
 
@@ -873,83 +830,191 @@ and (orientation: landscape) {
 <body>
 
 
-<div class="page">
+<!-- =======================================================
+     PAGE 1
+======================================================== -->
 
-    <div class="content">
-
-
-        <!-- ================================================
-             FLOATING HEARTS
-        ================================================= -->
-
-        <div class="hearts">
-
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-            <span class="heart">♡</span>
-
-        </div>
+<section
+    class="page"
+    id="page1"
+>
 
 
-        <!-- ================================================
-             WELCOME
-        ================================================= -->
+    <!-- หัวใจ -->
 
-        <div class="welcome-text">
+    <div class="hearts">
 
-            <div>Welcome</div>
-
-            <div>october</div>
-
-        </div>
-
-
-        <!-- ================================================
-             POLAROID
-        ================================================= -->
-
-        <div class="polaroid">
-
-            <img
-                src="For you2.png"
-                alt="Polaroid photos"
-            >
-
-        </div>
-
-
-        <!-- ================================================
-             MUSIC PLAYER
-        ================================================= -->
-
-        <div class="music-player">
-
-            <img
-                src="For you.png"
-                alt="Music player"
-            >
-
-        </div>
-
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
 
     </div>
 
-</div>
+
+    <!-- Welcome -->
+
+    <div class="welcome-text">
+
+        <div>Welcome</div>
+
+        <div>october</div>
+
+    </div>
+
+
+    <!-- Polaroid -->
+
+    <div class="polaroid">
+
+        <img
+            src="For you2.png"
+            alt="Polaroid"
+        >
+
+    </div>
+
+
+    <!-- Music -->
+
+    <div class="music-player">
+
+        <img
+            src="For you.png"
+            alt="Music player"
+        >
+
+    </div>
+
+
+    <!-- Gift -->
+
+    <div
+        class="gift-container"
+        id="giftContainer"
+    >
+
+        <img
+            class="gift-box"
+            src="gift.png"
+            alt="Gift box"
+        >
+
+
+        <img
+            class="gift-open"
+            src="gift-open.png"
+            alt="Open gift"
+        >
+
+
+        <div class="click-text">
+            Click me ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     PAGE 2
+======================================================== -->
+
+<section
+    class="page"
+    id="page2"
+>
+
+    <div class="page2-content">
+
+
+        <!-- กล่องเปิด -->
+
+        <img
+            class="open-gift-big"
+            src="gift-open.png"
+            alt="Open gift"
+        >
+
+
+        <div class="page2-title">
+
+            ♡ Something for you ♡
+
+        </div>
+
+    </div>
+
+</section>
+
 
 
 <script>
 
 /* =========================================================
-   ป้องกันรูปถูกลาก
+   GIFT CLICK
+========================================================= */
+
+const gift =
+    document.getElementById("giftContainer");
+
+
+gift.addEventListener(
+    "click",
+    function() {
+
+
+        /* ป้องกันกดซ้ำ */
+
+        if (
+            gift.classList.contains("open")
+        ) {
+            return;
+        }
+
+
+        /* เปลี่ยนจากกล่องปิด
+           เป็นกล่องเปิด */
+
+        gift.classList.add("open");
+
+
+        /*
+           รอให้เห็น animation
+           กล่องเปิดก่อน
+        */
+
+        setTimeout(
+            function() {
+
+                /*
+                   เปลี่ยนไปหน้าที่ 2
+                */
+
+                document.body.classList.add(
+                    "next-page"
+                );
+
+            },
+            1000
+        );
+
+    }
+);
+
+
+/* =========================================================
+   ป้องกันลากรูป
 ========================================================= */
 
 document
@@ -966,27 +1031,6 @@ document
     );
 
 });
-
-
-/* =========================================================
-   ปรับหน้าจอหลังหมุนมือถือ
-========================================================= */
-
-window.addEventListener(
-    "orientationchange",
-    function() {
-
-        setTimeout(
-            function() {
-
-                window.scrollTo(0, 0);
-
-            },
-            100
-        );
-
-    }
-);
 
 </script>
 
