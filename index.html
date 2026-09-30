@@ -4,9 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#ffd8ee">
+
 <title>Welcome October ♡</title>
 
 <style>
+
+/* =========================================================
+   FONT : ITIM
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
 /* =========================================================
    RESET
 ========================================================= */
@@ -16,26 +24,30 @@
     box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
     width: 100%;
     min-height: 100%;
 }
 
 body {
     overflow-x: hidden;
-    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-family: "Itim", sans-serif;
     background: #fbdcf0;
 }
 
+
 /* =========================================================
-   MAIN
-   คอม + iPad ใช้ c.png
-   โทรศัพท์ใช้ f.png
+   MAIN PAGE
+   คอม + iPad = c.png
+   มือถือแนวตั้ง = f.png
 ========================================================= */
 .page {
     position: relative;
+
     width: 100%;
     min-height: 100svh;
+
     overflow: hidden;
 
     background-image: url("c.png");
@@ -46,16 +58,18 @@ body {
 
 .content {
     position: relative;
+
     width: 100%;
     min-height: 100svh;
 }
 
+
 /* =========================================================
-   WELCOME TEXT
-   ใช้หลัก ๆ บนมือถือ แต่สามารถเปิดใช้บนจอใหญ่ได้ภายหลัง
+   WELCOME OCTOBER
 ========================================================= */
 .welcome-text {
     position: absolute;
+
     z-index: 20;
 
     left: 50%;
@@ -64,12 +78,16 @@ body {
     transform: translateX(-50%);
 
     width: 55%;
+
     text-align: center;
 
     color: #000;
-    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
-    font-weight: 900;
+
+    font-family: "Itim", sans-serif;
+    font-weight: normal;
+
     font-size: clamp(40px, 5vw, 78px);
+
     line-height: 1.25;
 
     pointer-events: none;
@@ -79,59 +97,76 @@ body {
     white-space: nowrap;
 }
 
+
 /* =========================================================
    MUSIC PLAYER
-   รูป: For you.png
+   For you.png
 ========================================================= */
 .music-player {
     position: absolute;
+
     z-index: 18;
 
     left: clamp(25px, 3.1vw, 55px);
+
     bottom: clamp(25px, 5.5vh, 65px);
 
     width: clamp(360px, 35vw, 500px);
 
-    transition: transform .3s ease, filter .3s ease;
+    transition:
+        transform .3s ease,
+        filter .3s ease;
 }
 
 .music-player img {
     display: block;
+
     width: 100%;
     height: auto;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
 
 .music-player:hover {
     transform: translateY(-5px);
+
     filter: brightness(1.04);
 }
 
+
 /* =========================================================
    POLAROID
-   รูป: For you2.png
+   For you2.png
 ========================================================= */
 .polaroid {
     position: absolute;
+
     z-index: 15;
 
-    right: clamp(60px, 8vw, 150px);
-    top: clamp(120px, 23vh, 220px);
+    right: clamp(30px, 5vw, 100px);
 
-    width: clamp(200px, 19vw, 290px);
+    top: clamp(90px, 18vh, 190px);
+
+    /* ใหญ่ขึ้น */
+    width: clamp(230px, 23vw, 350px);
 
     transform: rotate(10deg);
-    transition: transform .35s ease, filter .3s ease;
+
+    transition:
+        transform .35s ease,
+        filter .3s ease;
 }
 
 .polaroid img {
     display: block;
+
     width: 100%;
     height: auto;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
 
@@ -139,44 +174,56 @@ body {
     transform: rotate(7deg) scale(1.03);
 }
 
+
 /* =========================================================
    DOG
-   รูป: For you3.png
+   For you3.png
 ========================================================= */
 .dog {
     position: absolute;
+
     z-index: 25;
 }
 
 .dog img {
     display: block;
+
     width: 100%;
     height: auto;
 
     user-select: none;
+
     -webkit-user-drag: none;
 }
 
-/* หมาในหน้าคอม */
+
+/* หมาใหญ่ขวาล่าง */
+.dog-bottom {
+    width: clamp(200px, 21vw, 320px);
+
+    right: clamp(-25px, -1vw, 0px);
+
+    bottom: clamp(-25px, -1vh, 0px);
+}
+
+
+/* หัวหมาซ้ายบน
+   ปกติซ่อนบนคอม/iPad */
 .dog-top {
     display: none;
 }
 
-.dog-bottom {
-    width: clamp(160px, 18vw, 260px);
-    right: clamp(-25px, -0.5vw, 0px);
-    bottom: clamp(-20px, -1vh, 0px);
-}
 
 /* =========================================================
-   TABLET
-   iPad แนวนอน / แนวตั้ง
+   TABLET / iPAD
 ========================================================= */
 @media (min-width: 768px) and (max-width: 1199px) {
 
     .page {
         background-image: url("c.png");
+
         background-size: cover;
+
         background-position: center center;
     }
 
@@ -184,21 +231,30 @@ body {
         display: none;
     }
 
+    /* เพลง */
     .music-player {
         width: clamp(300px, 38vw, 440px);
+
         left: 4vw;
+
         bottom: 6vh;
     }
 
+    /* โพลารอยด์ */
     .polaroid {
-        width: clamp(190px, 24vw, 270px);
-        right: 8vw;
-        top: 25vh;
+        width: clamp(220px, 27vw, 340px);
+
+        right: 5vw;
+
+        top: 19vh;
     }
 
+    /* หมา */
     .dog-bottom {
-        width: clamp(150px, 21vw, 230px);
-        right: 0;
+        width: clamp(190px, 25vw, 315px);
+
+        right: -1vw;
+
         bottom: -5px;
     }
 
@@ -207,44 +263,58 @@ body {
     }
 }
 
+
 /* =========================================================
-   iPad แนวตั้ง
+   iPAD แนวตั้ง
 ========================================================= */
 @media (min-width: 768px)
        and (max-width: 1199px)
        and (orientation: portrait) {
 
+    /* เพลง */
     .music-player {
         width: 48vw;
+
         left: 4vw;
+
         bottom: 7vh;
     }
 
+    /* โพลารอยด์ */
     .polaroid {
-        width: 38vw;
-        right: 8vw;
-        top: 25vh;
+        width: clamp(240px, 32vw, 360px);
+
+        right: 5vw;
+
+        top: 20vh;
     }
 
+    /* หมา */
     .dog-bottom {
-        width: 30vw;
-        right: 1vw;
+        width: clamp(210px, 29vw, 330px);
+
+        right: -1vw;
+
         bottom: 0;
     }
 }
 
+
 /* =========================================================
    MOBILE
    ใช้ f.png
-   Layout ตามรูปตัวอย่างที่ผู้ใช้ส่งมา
 ========================================================= */
 @media (max-width: 767px) {
 
     .page {
         background-image: url("f.png");
+
         background-size: cover;
+
         background-position: center top;
+
         background-repeat: no-repeat;
+
         min-height: 100svh;
     }
 
@@ -252,34 +322,53 @@ body {
         min-height: 100svh;
     }
 
-    /* Welcome October */
+
+    /* -------------------------
+       Welcome
+    ------------------------- */
+
     .welcome-text {
+
         display: block;
 
         left: 50%;
+
         top: 12%;
 
         width: 62%;
 
         font-size: clamp(38px, 11vw, 75px);
+
         line-height: 1.25;
     }
 
-    /* Polaroid ขวาบน */
-    .polaroid {
-        width: clamp(175px, 42vw, 250px);
 
-        right: 7%;
-        top: 3%;
+    /* -------------------------
+       Polaroid
+    ------------------------- */
+
+    .polaroid {
+
+        width: clamp(200px, 48vw, 290px);
+
+        right: 1%;
+
+        top: 4%;
 
         transform: rotate(10deg);
     }
 
-    /* Music ด้านล่าง */
+
+    /* -------------------------
+       Music
+    ------------------------- */
+
     .music-player {
+
         width: clamp(300px, 76vw, 500px);
 
         left: 50%;
+
         bottom: 8%;
 
         transform: translateX(-50%);
@@ -289,26 +378,39 @@ body {
         transform: translateX(-50%);
     }
 
-    /* หมาใหญ่ขวาล่าง */
-    .dog-bottom {
-        width: clamp(145px, 36vw, 220px);
 
-        right: -2%;
+    /* -------------------------
+       หมาใหญ่ขวาล่าง
+    ------------------------- */
+
+    .dog-bottom {
+
+        width: clamp(180px, 43vw, 260px);
+
+        right: -5%;
+
         bottom: -1%;
     }
 
-    /* หัวหมาซ้ายบน */
+
+    /* -------------------------
+       หัวหมาซ้ายบน
+    ------------------------- */
+
     .dog-top {
+
         display: block;
 
-        width: clamp(125px, 33vw, 205px);
+        width: clamp(145px, 38vw, 225px);
 
-        left: -7%;
+        left: -8%;
+
         top: -2%;
 
         transform: rotate(180deg);
     }
 }
+
 
 /* =========================================================
    SMALL PHONE
@@ -316,34 +418,53 @@ body {
 @media (max-width: 420px) {
 
     .welcome-text {
+
         top: 12%;
+
         width: 66%;
+
         font-size: clamp(35px, 11vw, 55px);
     }
 
+
     .polaroid {
-        width: 43vw;
-        right: 6vw;
+
+        width: clamp(195px, 49vw, 255px);
+
+        right: 3vw;
+
         top: 3%;
     }
 
+
     .music-player {
+
         width: 82vw;
+
         bottom: 7%;
     }
 
+
     .dog-bottom {
-        width: 36vw;
-        right: -3vw;
+
+        width: clamp(170px, 43vw, 225px);
+
+        right: -4vw;
+
         bottom: 0;
     }
 
+
     .dog-top {
-        width: 33vw;
-        left: -8vw;
+
+        width: clamp(135px, 37vw, 200px);
+
+        left: -9vw;
+
         top: -1%;
     }
 }
+
 
 /* =========================================================
    VERY SMALL PHONE
@@ -351,53 +472,82 @@ body {
 @media (max-width: 360px) {
 
     .welcome-text {
+
         top: 11%;
+
         width: 70%;
+
         font-size: 35px;
     }
 
+
     .polaroid {
-        width: 44vw;
+
+        width: 49vw;
+
+        right: 2vw;
+
         top: 3%;
     }
 
+
     .music-player {
+
         width: 86vw;
+
         bottom: 6%;
     }
 
+
     .dog-bottom {
-        width: 38vw;
+
+        width: 43vw;
+
+        right: -4vw;
     }
 
+
     .dog-top {
-        width: 35vw;
+
+        width: 39vw;
+
+        left: -9vw;
     }
 }
 
+
 /* =========================================================
    PHONE LANDSCAPE
-   ถ้าโทรศัพท์หมุนแนวนอน ให้ใช้ c.png
+   ใช้ c.png
 ========================================================= */
 @media (max-width: 767px) and (orientation: landscape) {
 
     .page {
+
         background-image: url("c.png");
+
         background-position: center center;
     }
+
 
     .welcome-text {
         display: none;
     }
 
+
     .dog-top {
         display: none;
     }
 
+
     .music-player {
-        width: 44vw;
+
+        width: 40vw;
+
         left: 4vw;
+
         bottom: 5vh;
+
         transform: none;
     }
 
@@ -405,79 +555,132 @@ body {
         transform: translateY(-5px);
     }
 
+
     .polaroid {
-        width: 20vw;
-        right: 14vw;
-        top: 12vh;
+
+        width: 27vw;
+
+        max-width: 280px;
+
+        right: 10vw;
+
+        top: 9vh;
     }
 
+
     .dog-bottom {
-        width: 17vw;
-        right: 1vw;
-        bottom: 0;
+
+        width: 24vw;
+
+        max-width: 250px;
+
+        right: 0;
+
+        bottom: -2px;
     }
 }
 
+
 /* =========================================================
-   ป้องกัน animation ถ้าผู้ใช้เปิด Reduce Motion
+   REDUCE MOTION
 ========================================================= */
 @media (prefers-reduced-motion: reduce) {
+
     * {
         scroll-behavior: auto !important;
+
         transition: none !important;
     }
 }
+
 </style>
 </head>
+
 
 <body>
 
 <div class="page">
+
     <div class="content">
 
-        <!-- ข้อความสำหรับหน้ามือถือ -->
+        <!-- Welcome October -->
         <div class="welcome-text">
             <div>Welcome</div>
             <div>october</div>
         </div>
 
-        <!-- รูปหมาซ้ายบนบนมือถือ -->
+
+        <!-- หัวหมาซ้ายบนมือถือ -->
         <div class="dog dog-top">
-            <img src="For you3.png" alt="Dog">
+            <img
+                src="For you3.png"
+                alt="Dog"
+            >
         </div>
+
 
         <!-- เครื่องเล่นเพลง -->
         <div class="music-player">
-            <img src="For you.png" alt="Music player">
+            <img
+                src="For you.png"
+                alt="Music player"
+            >
         </div>
 
-        <!-- รูปโพลารอยด์ -->
+
+        <!-- โพลารอยด์ -->
         <div class="polaroid">
-            <img src="For you2.png" alt="Polaroid photos">
+            <img
+                src="For you2.png"
+                alt="Polaroid photos"
+            >
         </div>
 
-        <!-- รูปหมาขวาล่าง -->
+
+        <!-- หมาใหญ่ขวาล่าง -->
         <div class="dog dog-bottom">
-            <img src="For you3.png" alt="Dog">
+            <img
+                src="For you3.png"
+                alt="Dog"
+            >
         </div>
 
     </div>
+
 </div>
 
+
 <script>
-/* ป้องกันรูปถูกลากออกจากหน้าเว็บ */
+
+/* =========================================================
+   ป้องกันรูปถูกลาก
+========================================================= */
+
 document.querySelectorAll("img").forEach(function (img) {
+
     img.addEventListener("dragstart", function (event) {
+
         event.preventDefault();
+
     });
+
 });
 
-/* เมื่อหมุนมือถือ/iPad ให้กลับไปด้านบน */
+
+/* =========================================================
+   เมื่อหมุนหน้าจอ
+========================================================= */
+
 window.addEventListener("orientationchange", function () {
+
     setTimeout(function () {
+
         window.scrollTo(0, 0);
+
     }, 100);
+
 });
+
 </script>
 
 </body>
