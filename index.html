@@ -1,1 +1,484 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffd8ee">
+<title>Welcome October ♡</title>
 
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    background: #fbdcf0;
+}
+
+/* =========================================================
+   MAIN
+   คอม + iPad ใช้ c.png
+   โทรศัพท์ใช้ f.png
+========================================================= */
+.page {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+    overflow: hidden;
+
+    background-image: url("c.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.content {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+}
+
+/* =========================================================
+   WELCOME TEXT
+   ใช้หลัก ๆ บนมือถือ แต่สามารถเปิดใช้บนจอใหญ่ได้ภายหลัง
+========================================================= */
+.welcome-text {
+    position: absolute;
+    z-index: 20;
+
+    left: 50%;
+    top: 18%;
+
+    transform: translateX(-50%);
+
+    width: 55%;
+    text-align: center;
+
+    color: #000;
+    font-family: "Arial Rounded MT Bold", Arial, sans-serif;
+    font-weight: 900;
+    font-size: clamp(40px, 5vw, 78px);
+    line-height: 1.25;
+
+    pointer-events: none;
+}
+
+.welcome-text div {
+    white-space: nowrap;
+}
+
+/* =========================================================
+   MUSIC PLAYER
+   รูป: For you.png
+========================================================= */
+.music-player {
+    position: absolute;
+    z-index: 18;
+
+    left: clamp(25px, 3.1vw, 55px);
+    bottom: clamp(25px, 5.5vh, 65px);
+
+    width: clamp(360px, 35vw, 500px);
+
+    transition: transform .3s ease, filter .3s ease;
+}
+
+.music-player img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.music-player:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.04);
+}
+
+/* =========================================================
+   POLAROID
+   รูป: For you2.png
+========================================================= */
+.polaroid {
+    position: absolute;
+    z-index: 15;
+
+    right: clamp(60px, 8vw, 150px);
+    top: clamp(120px, 23vh, 220px);
+
+    width: clamp(170px, 16vw, 245px);
+
+    transform: rotate(10deg);
+    transition: transform .35s ease, filter .3s ease;
+}
+
+.polaroid img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.polaroid:hover {
+    transform: rotate(7deg) scale(1.03);
+}
+
+/* =========================================================
+   DOG
+   รูป: For you3.png
+========================================================= */
+.dog {
+    position: absolute;
+    z-index: 25;
+}
+
+.dog img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* หมาในหน้าคอม */
+.dog-top {
+    display: none;
+}
+
+.dog-bottom {
+    width: clamp(130px, 15vw, 220px);
+    right: clamp(-20px, 0vw, 0px);
+    bottom: clamp(-20px, -1vh, 0px);
+}
+
+/* =========================================================
+   TABLET
+   iPad แนวนอน / แนวตั้ง
+========================================================= */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .page {
+        background-image: url("c.png");
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .welcome-text {
+        display: none;
+    }
+
+    .music-player {
+        width: clamp(300px, 38vw, 440px);
+        left: 4vw;
+        bottom: 6vh;
+    }
+
+    .polaroid {
+        width: clamp(150px, 19vw, 210px);
+        right: 8vw;
+        top: 25vh;
+    }
+
+    .dog-bottom {
+        width: clamp(120px, 17vw, 190px);
+        right: 0;
+        bottom: -5px;
+    }
+
+    .dog-top {
+        display: none;
+    }
+}
+
+/* =========================================================
+   iPad แนวตั้ง
+========================================================= */
+@media (min-width: 768px)
+       and (max-width: 1199px)
+       and (orientation: portrait) {
+
+    .music-player {
+        width: 48vw;
+        left: 4vw;
+        bottom: 7vh;
+    }
+
+    .polaroid {
+        width: 28vw;
+        right: 8vw;
+        top: 25vh;
+    }
+
+    .dog-bottom {
+        width: 25vw;
+        right: 1vw;
+        bottom: 0;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ใช้ f.png
+   Layout ตามรูปตัวอย่างที่ผู้ใช้ส่งมา
+========================================================= */
+@media (max-width: 767px) {
+
+    .page {
+        background-image: url("f.png");
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        min-height: 100svh;
+    }
+
+    .content {
+        min-height: 100svh;
+    }
+
+    /* Welcome October */
+    .welcome-text {
+        display: block;
+
+        left: 50%;
+        top: 12%;
+
+        width: 62%;
+
+        font-size: clamp(38px, 11vw, 75px);
+        line-height: 1.25;
+    }
+
+    /* Polaroid ขวาบน */
+    .polaroid {
+        width: clamp(145px, 34vw, 220px);
+
+        right: 7%;
+        top: 3%;
+
+        transform: rotate(10deg);
+    }
+
+    /* Music ด้านล่าง */
+    .music-player {
+        width: clamp(300px, 76vw, 500px);
+
+        left: 50%;
+        bottom: 8%;
+
+        transform: translateX(-50%);
+    }
+
+    .music-player:hover {
+        transform: translateX(-50%);
+    }
+
+    /* หมาใหญ่ขวาล่าง */
+    .dog-bottom {
+        width: clamp(115px, 29vw, 190px);
+
+        right: -2%;
+        bottom: -1%;
+    }
+
+    /* หัวหมาซ้ายบน */
+    .dog-top {
+        display: block;
+
+        width: clamp(100px, 28vw, 180px);
+
+        left: -7%;
+        top: -2%;
+
+        transform: rotate(180deg);
+    }
+}
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+@media (max-width: 420px) {
+
+    .welcome-text {
+        top: 12%;
+        width: 66%;
+        font-size: clamp(35px, 11vw, 55px);
+    }
+
+    .polaroid {
+        width: 38vw;
+        right: 6vw;
+        top: 3%;
+    }
+
+    .music-player {
+        width: 82vw;
+        bottom: 7%;
+    }
+
+    .dog-bottom {
+        width: 32vw;
+        right: -3vw;
+        bottom: 0;
+    }
+
+    .dog-top {
+        width: 29vw;
+        left: -8vw;
+        top: -1%;
+    }
+}
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+@media (max-width: 360px) {
+
+    .welcome-text {
+        top: 11%;
+        width: 70%;
+        font-size: 35px;
+    }
+
+    .polaroid {
+        width: 40vw;
+        top: 3%;
+    }
+
+    .music-player {
+        width: 86vw;
+        bottom: 6%;
+    }
+
+    .dog-bottom {
+        width: 34vw;
+    }
+
+    .dog-top {
+        width: 31vw;
+    }
+}
+
+/* =========================================================
+   PHONE LANDSCAPE
+   ถ้าโทรศัพท์หมุนแนวนอน ให้ใช้ c.png
+========================================================= */
+@media (max-width: 767px) and (orientation: landscape) {
+
+    .page {
+        background-image: url("c.png");
+        background-position: center center;
+    }
+
+    .welcome-text {
+        display: none;
+    }
+
+    .dog-top {
+        display: none;
+    }
+
+    .music-player {
+        width: 40vw;
+        left: 4vw;
+        bottom: 5vh;
+        transform: none;
+    }
+
+    .music-player:hover {
+        transform: translateY(-5px);
+    }
+
+    .polaroid {
+        width: 20vw;
+        right: 14vw;
+        top: 12vh;
+    }
+
+    .dog-bottom {
+        width: 17vw;
+        right: 1vw;
+        bottom: 0;
+    }
+}
+
+/* =========================================================
+   ป้องกัน animation ถ้าผู้ใช้เปิด Reduce Motion
+========================================================= */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+    <div class="content">
+
+        <!-- ข้อความสำหรับหน้ามือถือ -->
+        <div class="welcome-text">
+            <div>Welcome</div>
+            <div>october</div>
+        </div>
+
+        <!-- รูปหมาซ้ายบนบนมือถือ -->
+        <div class="dog dog-top">
+            <img src="For you3.png" alt="Dog">
+        </div>
+
+        <!-- เครื่องเล่นเพลง -->
+        <div class="music-player">
+            <img src="For you.png" alt="Music player">
+        </div>
+
+        <!-- รูปโพลารอยด์ -->
+        <div class="polaroid">
+            <img src="For you2.png" alt="Polaroid photos">
+        </div>
+
+        <!-- รูปหมาขวาล่าง -->
+        <div class="dog dog-bottom">
+            <img src="For you3.png" alt="Dog">
+        </div>
+
+    </div>
+</div>
+
+<script>
+/* ป้องกันรูปถูกลากออกจากหน้าเว็บ */
+document.querySelectorAll("img").forEach(function (img) {
+    img.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
+});
+
+/* เมื่อหมุนมือถือ/iPad ให้กลับไปด้านบน */
+window.addEventListener("orientationchange", function () {
+    setTimeout(function () {
+        window.scrollTo(0, 0);
+    }, 100);
+});
+</script>
+
+</body>
+</html>
