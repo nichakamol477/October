@@ -6,25 +6,18 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-      content="width=device-width,
-               initial-scale=1.0,
-               viewport-fit=cover">
+      content="width=device-width, initial-scale=1.0">
 
 <title>Welcome October ♡</title>
 
-
 <style>
-
-/* =========================================================
-   FONT
-========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 
 
-/* =========================================================
+/* =====================================================
    RESET
-========================================================= */
+===================================================== */
 
 * {
     margin: 0;
@@ -32,85 +25,98 @@
     box-sizing: border-box;
 }
 
-
 html,
 body {
     width: 100%;
     height: 100%;
 }
 
-
 body {
-
-    overflow: hidden;
-
     font-family: "Itim", sans-serif;
-
-    background: #F6C6C7;
+    overflow: hidden;
 }
 
 
-/* =========================================================
+/* =====================================================
    PAGE
-========================================================= */
+===================================================== */
 
 .page {
-
     position: absolute;
-
     inset: 0;
 
     width: 100%;
     height: 100svh;
 
-    overflow: hidden;
-
     transition:
-        opacity 0.7s ease,
-        visibility 0.7s ease;
+        opacity 0.8s ease,
+        visibility 0.8s ease;
 }
 
 
-/* =========================================================
+/* =====================================================
    PAGE 1
-========================================================= */
+===================================================== */
 
 #page1 {
 
     background: #F6C6C7;
 
     opacity: 1;
-
     visibility: visible;
 
     z-index: 1;
+
+    overflow: hidden;
 }
 
 
-/* =========================================================
-   PAGE 2
-========================================================= */
+/* =====================================================
+   PAGE 2 VIDEO
+===================================================== */
 
 #page2 {
 
     background: #D0F4DE;
 
     opacity: 0;
-
     visibility: hidden;
 
     pointer-events: none;
 
     z-index: 5;
+
+    overflow: hidden;
 }
 
 
-/* เปลี่ยนหน้า */
+/* =====================================================
+   PAGE 3 MESSAGE
+===================================================== */
+
+#page3 {
+
+    background: #D0F4DE;
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 10;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PAGE SWITCH
+===================================================== */
 
 body.show-video #page1 {
 
     opacity: 0;
-
     visibility: hidden;
 
     pointer-events: none;
@@ -120,21 +126,38 @@ body.show-video #page1 {
 body.show-video #page2 {
 
     opacity: 1;
-
     visibility: visible;
 
     pointer-events: auto;
 }
 
 
-/* =========================================================
+body.show-message #page1,
+body.show-message #page2 {
+
+    opacity: 0;
+    visibility: hidden;
+
+    pointer-events: none;
+}
+
+
+body.show-message #page3 {
+
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+/* =====================================================
    FLOATING HEARTS
-========================================================= */
+===================================================== */
 
 .hearts {
 
     position: absolute;
-
     inset: 0;
 
     z-index: 1;
@@ -147,7 +170,7 @@ body.show-video #page2 {
 
     position: absolute;
 
-    color: rgba(255,255,255,0.75);
+    color: rgba(255,255,255,0.78);
 
     font-family: Arial, sans-serif;
 
@@ -160,15 +183,12 @@ body.show-video #page2 {
 }
 
 
-/* ตำแหน่งหัวใจ */
-
 .heart:nth-child(1) {
     left: 4%;
     top: 12%;
     font-size: 58px;
     animation-duration: 8s;
 }
-
 
 .heart:nth-child(2) {
     left: 16%;
@@ -178,7 +198,6 @@ body.show-video #page2 {
     animation-delay: 2s;
 }
 
-
 .heart:nth-child(3) {
     left: 27%;
     top: 22%;
@@ -186,7 +205,6 @@ body.show-video #page2 {
     animation-duration: 9s;
     animation-delay: 1s;
 }
-
 
 .heart:nth-child(4) {
     left: 42%;
@@ -196,7 +214,6 @@ body.show-video #page2 {
     animation-delay: 3s;
 }
 
-
 .heart:nth-child(5) {
     left: 53%;
     top: 7%;
@@ -204,7 +221,6 @@ body.show-video #page2 {
     animation-duration: 8s;
     animation-delay: 2s;
 }
-
 
 .heart:nth-child(6) {
     left: 65%;
@@ -214,7 +230,6 @@ body.show-video #page2 {
     animation-delay: 4s;
 }
 
-
 .heart:nth-child(7) {
     left: 78%;
     top: 17%;
@@ -222,7 +237,6 @@ body.show-video #page2 {
     animation-duration: 9s;
     animation-delay: 1s;
 }
-
 
 .heart:nth-child(8) {
     left: 91%;
@@ -232,7 +246,6 @@ body.show-video #page2 {
     animation-delay: 3s;
 }
 
-
 .heart:nth-child(9) {
     left: 2%;
     top: 47%;
@@ -240,7 +253,6 @@ body.show-video #page2 {
     animation-duration: 9s;
     animation-delay: 4s;
 }
-
 
 .heart:nth-child(10) {
     left: 86%;
@@ -250,7 +262,6 @@ body.show-video #page2 {
     animation-delay: 2s;
 }
 
-
 .heart:nth-child(11) {
     left: 14%;
     top: 34%;
@@ -258,7 +269,6 @@ body.show-video #page2 {
     animation-duration: 12s;
     animation-delay: 5s;
 }
-
 
 .heart:nth-child(12) {
     left: 60%;
@@ -269,14 +279,9 @@ body.show-video #page2 {
 }
 
 
-/* =========================================================
-   HEART ANIMATION
-========================================================= */
-
 @keyframes floatHeart {
 
     0% {
-
         opacity: 0.15;
 
         transform:
@@ -285,9 +290,7 @@ body.show-video #page2 {
             scale(0.95);
     }
 
-
     50% {
-
         opacity: 0.75;
 
         transform:
@@ -296,9 +299,7 @@ body.show-video #page2 {
             scale(1.06);
     }
 
-
     100% {
-
         opacity: 0.15;
 
         transform:
@@ -309,10 +310,9 @@ body.show-video #page2 {
 }
 
 
-/* =========================================================
+/* =====================================================
    WELCOME
-   ขยับขึ้นด้านบน
-========================================================= */
+===================================================== */
 
 .welcome-text {
 
@@ -321,7 +321,6 @@ body.show-video #page2 {
     z-index: 10;
 
     left: 50%;
-
     top: 8%;
 
     transform: translateX(-50%);
@@ -333,25 +332,20 @@ body.show-video #page2 {
     color: #000;
 
     font-size:
-        clamp(
-            45px,
-            5vw,
-            78px
-        );
+        clamp(45px, 5vw, 78px);
 
     line-height: 1.2;
 }
 
 
 .welcome-text div {
-
     white-space: nowrap;
 }
 
 
-/* =========================================================
+/* =====================================================
    POLAROID
-========================================================= */
+===================================================== */
 
 .polaroid {
 
@@ -360,25 +354,13 @@ body.show-video #page2 {
     z-index: 12;
 
     width:
-        clamp(
-            210px,
-            19vw,
-            330px
-        );
+        clamp(210px, 19vw, 330px);
 
     right:
-        clamp(
-            20px,
-            3vw,
-            60px
-        );
+        clamp(20px, 3vw, 60px);
 
     top:
-        clamp(
-            90px,
-            15vh,
-            170px
-        );
+        clamp(90px, 15vh, 170px);
 
     transform: rotate(10deg);
 }
@@ -389,18 +371,15 @@ body.show-video #page2 {
     display: block;
 
     width: 100%;
-
     height: auto;
 
     user-select: none;
-
-    -webkit-user-drag: none;
 }
 
 
-/* =========================================================
-   MUSIC PLAYER
-========================================================= */
+/* =====================================================
+   MUSIC PLAYER IMAGE
+===================================================== */
 
 .music-player {
 
@@ -409,25 +388,13 @@ body.show-video #page2 {
     z-index: 15;
 
     left:
-        clamp(
-            30px,
-            4vw,
-            70px
-        );
+        clamp(30px, 4vw, 70px);
 
     bottom:
-        clamp(
-            30px,
-            7vh,
-            80px
-        );
+        clamp(30px, 7vh, 80px);
 
     width:
-        clamp(
-            360px,
-            34vw,
-            520px
-        );
+        clamp(360px, 34vw, 520px);
 }
 
 
@@ -436,18 +403,13 @@ body.show-video #page2 {
     display: block;
 
     width: 100%;
-
     height: auto;
-
-    user-select: none;
-
-    -webkit-user-drag: none;
 }
 
 
-/* =========================================================
+/* =====================================================
    GIFT
-========================================================= */
+===================================================== */
 
 .gift-container {
 
@@ -456,41 +418,31 @@ body.show-video #page2 {
     z-index: 30;
 
     left: 50%;
-
     top: 52%;
 
     transform:
         translate(-50%, -50%);
 
     width:
-        clamp(
-            210px,
-            24vw,
-            350px
-        );
+        clamp(210px, 24vw, 350px);
 
     text-align: center;
 }
 
 
-/* =========================================================
-   GIFT IMAGE
-========================================================= */
+/* กล่องปิด */
 
 .gift-box {
 
     display: block;
 
     width: 100%;
-
     height: auto;
 
     transition:
         transform 0.25s ease;
 }
 
-
-/* เมื่อเอาเมาส์ชี้ */
 
 .gift-container:hover .gift-box {
 
@@ -500,30 +452,26 @@ body.show-video #page2 {
 }
 
 
-/* =========================================================
-   GIFT OPEN
-========================================================= */
+/* กล่องเปิด */
 
 .gift-open {
 
     display: none;
 
     width: 100%;
-
     height: auto;
 }
 
 
-/* =========================================================
+/* =====================================================
    CLICK BUTTON
-========================================================= */
+===================================================== */
 
 .click-button {
 
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     margin-top: 18px;
@@ -537,30 +485,22 @@ body.show-video #page2 {
 
     border-radius: 999px;
 
-    background: #ffffff;
+    background: white;
 
-    color: #000000;
+    color: #000;
 
     font-family: "Itim", sans-serif;
 
     font-size:
-        clamp(
-            23px,
-            2.5vw,
-            34px
-        );
-
-    line-height: 1;
+        clamp(23px, 2.5vw, 34px);
 
     cursor: pointer;
 
     box-shadow:
-        0 5px 15px
-        rgba(0,0,0,0.10);
+        0 5px 15px rgba(0,0,0,0.10);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 0.2s ease;
 }
 
 
@@ -569,23 +509,18 @@ body.show-video #page2 {
     transform:
         translateY(-3px)
         scale(1.03);
-
-    box-shadow:
-        0 8px 18px
-        rgba(0,0,0,0.15);
 }
 
 
 .click-button:active {
 
-    transform:
-        scale(0.96);
+    transform: scale(0.96);
 }
 
 
-/* =========================================================
-   ตอนเปิดกล่อง
-========================================================= */
+/* =====================================================
+   GIFT OPEN
+===================================================== */
 
 .gift-container.open .gift-box {
 
@@ -611,10 +546,6 @@ body.show-video #page2 {
 }
 
 
-/* =========================================================
-   GIFT OPEN ANIMATION
-========================================================= */
-
 @keyframes giftOpenAnimation {
 
     0% {
@@ -627,7 +558,6 @@ body.show-video #page2 {
             rotate(-5deg);
     }
 
-
     60% {
 
         opacity: 1;
@@ -637,7 +567,6 @@ body.show-video #page2 {
             translateY(-8px)
             rotate(2deg);
     }
-
 
     100% {
 
@@ -651,59 +580,236 @@ body.show-video #page2 {
 }
 
 
-/* =========================================================
+/* =====================================================
    VIDEO PAGE
-========================================================= */
+===================================================== */
 
 .video-page-content {
 
-    position: relative;
-
     width: 100%;
-
     height: 100%;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     padding: 2vh 2vw;
 }
 
 
-/* =========================================================
-   VIDEO
-========================================================= */
-
 #myVideo {
 
     display: block;
 
     width: 100%;
-
     height: 100%;
-
-    max-width: 100%;
-
-    max-height: 100%;
 
     object-fit: contain;
 
-    border-radius: 12px;
-
     background: #D0F4DE;
 
-    box-shadow:
-        0 10px 35px
-        rgba(0,0,0,0.12);
+    border-radius: 12px;
 }
 
 
-/* =========================================================
+/* =====================================================
+   MESSAGE PAGE
+===================================================== */
+
+.message-wrapper {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    padding:
+        55px 7vw 80px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+/* หัวข้อ */
+
+.message-title {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 28px;
+
+    text-align: center;
+
+    color: #222;
+
+    font-size:
+        clamp(38px, 5vw, 72px);
+
+    line-height: 1.2;
+
+    animation:
+        titlePop
+        0.8s
+        ease-out;
+}
+
+
+@keyframes titlePop {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.95);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* กล่องข้อความ */
+
+.message-card {
+
+    position: relative;
+
+    width: min(100%, 1050px);
+
+    padding:
+        clamp(25px, 4vw, 55px);
+
+    background:
+        rgba(255,255,255,0.78);
+
+    border:
+        2px solid
+        rgba(255,255,255,0.9);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(0,0,0,0.08);
+
+    animation:
+        cardAppear
+        1s
+        ease-out;
+}
+
+
+@keyframes cardAppear {
+
+    0% {
+
+        opacity: 0;
+
+        transform:
+            translateY(40px);
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ข้อความ */
+
+.message-card p {
+
+    color: #303030;
+
+    font-size:
+        clamp(18px, 1.7vw, 25px);
+
+    line-height: 1.9;
+
+    text-align: left;
+
+    margin-bottom: 28px;
+}
+
+
+.message-card p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* ข้อความท้าย */
+
+.message-end {
+
+    margin-top: 35px;
+
+    text-align: center;
+
+    font-size:
+        clamp(25px, 3vw, 40px);
+
+    color: #333;
+}
+
+
+/* =====================================================
+   MUSIC ON MESSAGE PAGE
+===================================================== */
+
+.music-note {
+
+    position: fixed;
+
+    z-index: 100;
+
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #333;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.12);
+
+    display: none;
+}
+
+
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media
 (max-width: 767px)
@@ -717,22 +823,14 @@ and (orientation: portrait) {
         width: 90%;
 
         font-size:
-            clamp(
-                38px,
-                11vw,
-                60px
-            );
+            clamp(38px, 11vw, 60px);
     }
 
 
     .polaroid {
 
         width:
-            clamp(
-                175px,
-                42vw,
-                250px
-            );
+            clamp(175px, 42vw, 250px);
 
         right: 1vw;
 
@@ -743,37 +841,16 @@ and (orientation: portrait) {
     .gift-container {
 
         width:
-            clamp(
-                190px,
-                47vw,
-                260px
-            );
+            clamp(190px, 47vw, 260px);
 
         top: 52%;
-    }
-
-
-    .click-button {
-
-        margin-top: 12px;
-
-        min-width: 135px;
-
-        padding:
-            8px 20px 10px;
-
-        font-size: 25px;
     }
 
 
     .music-player {
 
         width:
-            clamp(
-                290px,
-                78vw,
-                450px
-            );
+            clamp(290px, 78vw, 450px);
 
         left: 50%;
 
@@ -784,58 +861,17 @@ and (orientation: portrait) {
     }
 
 
-    /* หัวใจมือถือ */
+    .click-button {
 
-    .heart:nth-child(1) {
-        font-size: 40px;
-    }
+        margin-top: 12px;
 
-    .heart:nth-child(2) {
-        font-size: 30px;
-    }
+        min-width: 135px;
 
-    .heart:nth-child(3) {
-        font-size: 55px;
-    }
-
-    .heart:nth-child(4) {
-        font-size: 35px;
-    }
-
-    .heart:nth-child(5) {
-        font-size: 45px;
-    }
-
-    .heart:nth-child(6) {
-        font-size: 30px;
-    }
-
-    .heart:nth-child(7) {
-        font-size: 50px;
-    }
-
-    .heart:nth-child(8) {
-        font-size: 35px;
-    }
-
-    .heart:nth-child(9) {
-        font-size: 28px;
-    }
-
-    .heart:nth-child(10) {
-        font-size: 45px;
-    }
-
-    .heart:nth-child(11) {
         font-size: 25px;
     }
 
-    .heart:nth-child(12) {
-        font-size: 30px;
-    }
 
-
-    /* วิดีโอบนมือถือ */
+    /* หน้าวิดีโอ */
 
     .video-page-content {
 
@@ -846,19 +882,66 @@ and (orientation: portrait) {
     #myVideo {
 
         width: 100%;
-
         height: 100%;
 
         border-radius: 0;
+    }
 
-        box-shadow: none;
+
+    /* หน้าข้อความ */
+
+    .message-wrapper {
+
+        padding:
+            35px 18px 70px;
+    }
+
+
+    .message-title {
+
+        margin-bottom: 22px;
+
+        font-size:
+            clamp(34px, 10vw, 52px);
+    }
+
+
+    .message-card {
+
+        padding:
+            24px 20px;
+
+        border-radius: 24px;
+    }
+
+
+    .message-card p {
+
+        font-size:
+            clamp(17px, 4.7vw, 21px);
+
+        line-height: 1.8;
+
+        margin-bottom: 24px;
+    }
+
+
+    .message-end {
+
+        font-size: 26px;
+    }
+
+
+    .music-note {
+
+        display: block;
     }
 }
 
 
-/* =========================================================
+/* =====================================================
    SMALL PHONE
-========================================================= */
+===================================================== */
 
 @media
 (max-width: 420px)
@@ -870,11 +953,7 @@ and (orientation: portrait) {
         top: 7%;
 
         font-size:
-            clamp(
-                35px,
-                11vw,
-                52px
-            );
+            clamp(35px, 11vw, 52px);
     }
 
 
@@ -902,12 +981,36 @@ and (orientation: portrait) {
 
         bottom: 5vh;
     }
+
+
+    .message-wrapper {
+
+        padding:
+            28px 13px 65px;
+    }
+
+
+    .message-card {
+
+        padding:
+            22px 17px;
+
+        border-radius: 20px;
+    }
+
+
+    .message-card p {
+
+        font-size: 17px;
+
+        line-height: 1.78;
+    }
 }
 
 
-/* =========================================================
-   PHONE LANDSCAPE
-========================================================= */
+/* =====================================================
+   LANDSCAPE PHONE
+===================================================== */
 
 @media
 (max-width: 767px)
@@ -950,6 +1053,21 @@ and (orientation: landscape) {
 
         transform: none;
     }
+
+
+    .message-wrapper {
+
+        padding:
+            30px 8vw 60px;
+    }
+
+
+    .message-card p {
+
+        font-size: 18px;
+
+        line-height: 1.7;
+    }
 }
 
 </style>
@@ -960,9 +1078,9 @@ and (orientation: landscape) {
 <body>
 
 
-<!-- =======================================================
+<!-- =====================================================
      PAGE 1
-======================================================== -->
+===================================================== -->
 
 <section
     class="page"
@@ -970,7 +1088,7 @@ and (orientation: landscape) {
 >
 
 
-    <!-- หัวใจลอย -->
+    <!-- หัวใจ -->
 
     <div class="hearts">
 
@@ -995,7 +1113,6 @@ and (orientation: landscape) {
     <div class="welcome-text">
 
         <div>Welcome</div>
-
         <div>october</div>
 
     </div>
@@ -1032,25 +1149,19 @@ and (orientation: landscape) {
         id="giftContainer"
     >
 
-        <!-- กล่องปิด -->
-
         <img
             class="gift-box"
             src="gift.png"
-            alt="Gift box"
+            alt="Gift"
         >
 
-
-        <!-- กล่องเปิด -->
 
         <img
             class="gift-open"
             src="gift-open.png"
-            alt="Open gift"
+            alt="Gift opened"
         >
 
-
-        <!-- ปุ่ม -->
 
         <button
             class="click-button"
@@ -1065,9 +1176,9 @@ and (orientation: landscape) {
 
 
 
-<!-- =======================================================
+<!-- =====================================================
      PAGE 2 : VIDEO
-======================================================== -->
+===================================================== -->
 
 <section
     class="page"
@@ -1088,8 +1199,6 @@ and (orientation: landscape) {
                 type="video/mp4"
             >
 
-            เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
-
         </video>
 
     </div>
@@ -1098,11 +1207,323 @@ and (orientation: landscape) {
 
 
 
+<!-- =====================================================
+     PAGE 3 : MESSAGE
+===================================================== -->
+
+<section
+    class="page"
+    id="page3"
+>
+
+
+    <!-- เพลง -->
+
+    <audio
+        id="messageMusic"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="girl in red we fell in love in october.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+
+    <div class="message-wrapper">
+
+
+        <!-- หัวข้อ -->
+
+        <h1 class="message-title">
+            Happy October kup ter 🩶
+        </h1>
+
+
+        <!-- ข้อความ -->
+
+        <div class="message-card">
+
+
+            <p>
+                วันนี้เป็นวันใหม่ของเดือนแล้วนะคะ
+                แต่ใจเค้าก็ยังเป็นของเธอคนเดิมเหมือนเดิมเลยนะ
+                เค้ารักเธอมากขึ้นทุกวันเลย
+                อะไรที่ไม่ดี อะไรที่ทำให้เราเหนื่อยหรือเสียใจ
+                ก็ทิ้งมันไว้กับเดือนที่แล้วนะคะ
+                เรื่องไหนที่ผ่านไปแล้วก็ให้มันผ่านไป
+                เก็บไว้แค่เรื่องดีๆ และความทรงจำดีๆ ของเรา
+            </p>
+
+
+            <p>
+                จากนี้ไปเค้าขอให้เธอได้พบเจอแต่เรื่องราวดีๆ
+                ขอให้ทุกวันใจดีกับเธอ
+                และขอให้เธอมีความสุขในทุกๆวัน
+                มีความสุขไปกับเค้าเลยนะคะ
+                ส่วนพรข้อไหนที่เธอยังไม่ได้เอ่ยขอ
+                เค้าจะคอยภาวนาให้เธอเอง
+                ไม่ว่าเธอจะปรารถนาสิ่งใด
+                เค้าก็อยากให้มันเกิดขึ้นจริงทั้งหมด
+                ขอให้ทุกความฝันพาเธอไปถึงปลายทาง
+                และถ้าพรข้อไหนต้องใช้ใครสักคนคอยส่งแรงใจ
+                เค้าจะเป็นคนนั้นเสมอ
+                เพราะความสุขของเธอเป็นหนึ่งในคำอธิษฐาน
+                ที่เค้าขออยู่เสมอเลยนะคะ
+            </p>
+
+
+            <p>
+                เค้าขอให้เดือนนี้เป็นเดือนที่ดีของเธอ
+                ขอให้ตุลาเรายังมีกัน
+                ขอให้เรารักกันไปเรื่อยๆ
+                รักษาความสัมพันธ์ของกันและกันไปแบบนี้ไปตลอด
+                ขอให้เธอได้กินแต่ของอร่อยๆ
+                มีแต่รอยยิ้ม
+                มีแต่อะไรดีดีเข้ามาในชีวิต
+                ไม่ปล่อยมือกันไปง่ายๆ
+                มีกันและกันแบบนี้ไปนานๆ
+            </p>
+
+
+            <p>
+                มีไรก็บอกเค้านะ
+                ไม่ชอบอะไร ไม่โอเคตรงไหนบอกเค้าได้เลย
+                เค้ายังคงพูดเหมือนเดิมแบบเดิมๆ
+                ไม่รู้แฟนเบื่อไหมนะงืม
+                นั้นแหละ แต่มันมาจากใจเค้าจริงๆ
+                เค้าอยากให้เธอรู้ว่าทุกครั้งที่เค้าพูด
+                เค้าพูดเพราะเค้ายังรู้สึกแบบนั้นกับเธออยู่จริงๆ
+                ไม่ได้พูดเพราะไม่รู้จะพูดอะไรนะ
+            </p>
+
+
+            <p>
+                ไม่ต้องกลัวว่าเค้าจะไม่โอเค
+                เค้าพร้อมจะรับฟัง ปรับปรุง
+                ปรับความเข้าใจเสมอเลยนะคะ
+                เค้าอยากให้เธอสบายใจเวลาที่มีเค้าอยู่
+                อยากให้เธอรู้ว่าเธอไม่จำเป็นต้องเก่ง
+                หรือเข้มแข็งตลอดเวลาก็ได้
+                ถ้าวันไหนเหนื่อยก็พัก
+                ถ้าวันไหนไม่ไหวก็มาหาเค้า
+            </p>
+
+
+            <p>
+                เค้าอาจจะช่วยแก้ทุกเรื่องให้เธอไม่ได้
+                แต่เค้าจะอยู่ฟังเธอจนกว่าเธอจะสบายใจเลยนะ
+                จะอยู่ในทุกๆวินาทีของเธอ
+                ทั้งตอนที่เธอต้องการและไม่ต้องการเลย
+                เค้าอยากมีเธออยู่ในเรื่องเล็กๆของชีวิต
+                อยากเล่าให้เธอฟังว่าวันนี้เค้าเจออะไรมาบ้าง
+                อยากรู้ว่าเธอกินข้าวรึยัง
+                วันนี้เหนื่อยมั้ย
+                มีอะไรทำให้ยิ้มได้บ้าง
+                เธอเข้ามาเป็นเซฟโซน เป็นบ้านของเค้า
+                เค้ารักเธอมากจริงๆ
+                รักจนแบบไม่มีความคิดไหนที่ไม่นึกถึงเธอเลย
+            </p>
+
+
+            <p>
+                แล้วเค้าอยากให้เธอรู้ไว้อย่างนึงนะคะ
+                ถ้าเค้าเลือกเธอแล้ว
+                เค้าก็จะรักทุกอย่างที่เป็นเธอ
+                ไม่ว่าเธอจะมีข้อบกพร่องตรงไหน
+                หรือมีมุมไหนที่เธอไม่มั่นใจในตัวเอง
+                เค้าก็ยังอยากรักและอยู่ข้างๆเธอเหมือนเดิม
+            </p>
+
+
+            <p>
+                เค้าไม่ได้อยากให้เธอต้องเปลี่ยนตัวเอง
+                เพื่อให้เป็นคนที่เค้าชอบเลย
+                เพราะเธอในแบบที่เธอเป็นอยู่ตอนนี้
+                ก็คือเธอที่เค้ารักแล้ว
+                เค้าชอบทั้งข้อดี ข้อเสีย
+                ความงอแง ความดื้อ ความน่ารัก
+                หรือแม้แต่มุมที่เธอไม่ชอบในตัวเอง
+                เค้าก็ยังอยากเรียนรู้และเข้าใจมันไปพร้อมกับเธอ
+            </p>
+
+
+            <p>
+                เค้าอยากทำให้แฟนของเค้า
+                เป็นคนที่โชคดีที่สุดเท่าที่เค้าจะทำได้
+                อยากให้เธอรู้ว่าการมีเค้าอยู่ข้างๆ
+                จะเป็นอีกหนึ่งที่ที่เธอกลับมาพักใจได้เสมอ
+            </p>
+
+
+            <p>
+                แล้วก็ไม่ต้องไปแข่งกับใครทั้งนั้นเลยนะ
+                ไม่ว่าเรื่องอะไรก็ตาม
+                เพราะสำหรับเค้า
+                เธอไม่จำเป็นต้องเอาตัวเองไปเปรียบเทียบกับใครเลย
+                เค้าเลือกเธอแล้ว
+                และเค้าก็ให้เธอเป็นที่หนึ่งของเค้าในทุกๆเรื่อง
+            </p>
+
+
+            <p>
+                ไม่ต้องเก่งกว่าใคร
+                ไม่ต้องเหมือนใคร
+                ไม่ต้องพยายามเป็นคนที่ดีที่สุดสำหรับทุกคน
+                แค่เป็นเธอแบบที่เธอเป็นก็พอแล้ว
+                เค้าไม่ได้รักเธอเพราะเธอต้องสมบูรณ์แบบ
+                เค้ารักเพราะเธอคือเธอ
+                และถ้าให้เค้าเลือกอีกกี่ครั้ง
+                เค้าก็ยังอยากเลือกเธออยู่ดี
+            </p>
+
+
+            <p>
+                เดือนที่แล้วเจออะไรที่แบบมันแย่
+                ก็ทิ้งไว้นั้นแหละนะคะ
+                เรื่องดีดีก็เก็บเอาไว้
+                อะไรที่คาดหวังไว้
+                เค้าขอให้เธอสมหวังในทุกๆเรื่อง
+                ทุกๆสิ่ง
+                เค้าพร้อมซัพพอร์ตเธอเสมอเลยนะ
+                รอวันที่เธอประสบความสำเร็จ
+                เค้าจะคอยอยู่ข้างๆตลอด
+            </p>
+
+
+            <p>
+                เค้ายังคงพูดเหมือนเดิมงืม
+                ซ้ำอีกแล้วแต่มาจากใจนะ
+                ไม่ว่าจะดีหรือร้าย
+                เค้าจะทำให้เธอมั่นใจในตัวเค้ามากกว่าเดิมด้วย
+                เค้าจะทำให้เธอรู้ว่าเค้ารักเธอมากจริงๆ
+                ไม่เคยคิดทำร้ายเธอเลยสักนิด
+                ในใจเค้ามีแต่อยากถนอมเธอมากขึ้นทุกวัน
+                รักเธอมากขึ้นทุกวัน
+            </p>
+
+
+            <p>
+                อยากเป็นคนที่เธอนึกถึงเวลาเจอเรื่องดีๆ
+                และเป็นคนที่เธอเลือกจะมาหาเวลาเจอเรื่องไม่ดี
+                อยากอยู่ข้างๆเธอในวันที่เธอเก่งที่สุด
+                และก็ยังอยู่ตรงนี้ในวันที่เธอรู้สึกว่า
+                ตัวเองไม่เก่งอะไรเลย
+                ไม่มั่นใจในตัวเอง
+            </p>
+
+
+            <p>
+                เค้าพร้อมเป็นพื้นที่ปลอดภัยให้เธอ
+                เซฟโซนของเธอ
+                เจอไรก็เล่าให้เค้าฟัง
+                มีไรก็ระบายกับเค้า
+                อยู่กับเค้าแล้วเธอเป็นตัวของตัวเองได้ตามสบายเลยนะคะ
+                ไม่ต้องพยายามเป็นใครเพื่อเค้าเลย
+                เป็นเธอแบบที่เธอเป็นนี่แหละดีที่สุดแล้ว
+                เค้าชอบเธอในแบบที่เธอเป็น
+                ชอบทุกๆอย่างที่เป็นเธอเลย
+                แค่เธอมีความสุข
+                เค้าก็มีความสุขแล้วนะคะ
+            </p>
+
+
+            <p>
+                ขอให้เดือนเกิดเค้าเดือนนี้
+                ไม่มีอะไรมาทำร้ายความรู้สึกเราทั้งคู่
+                มีอะไรก็ค่อยๆคุยกัน
+                ไม่งอนกันนาน
+                ไม่ปล่อยให้อีกคนต้องคิดมากอยู่คนเดียว
+                เค้าอยากจับมือเธอผ่านทุกๆเดือน
+                ทุกๆปี ไปเรื่อยๆเลยนะ
+            </p>
+
+
+            <p>
+                ไม่รู้ว่าอนาคตจะมีเรื่องอะไรเข้ามาบ้าง
+                แต่เค้าอยากให้ในทุกๆเรื่องนั้น
+                มีเราอยู่ข้างๆกัน
+                เค้าไม่สัญญาว่าจะไม่ผิดพลาดเลย
+                แต่เค้าสัญญาว่าถ้าผิดพลาด
+                เค้าจะเรียนรู้และพยายามทำให้ดีขึ้น
+                เค้าจะรักเธอให้ดีขึ้นในทุกๆวัน
+                ทำตัวให้ดีขึ้นกว่าเดิมนะ
+            </p>
+
+
+            <p>
+                ขอบคุณที่เข้ามาเป็นความน่ารักในชีวิตเค้า
+                ขอบคุณที่ทำให้วันธรรมดาของเค้ามีความหมายมากขึ้น
+                ขอบคุณที่เลือกเค้านะคะ
+                รักเธอมากๆเลยนะคะ
+                My gravity ของเค้า 🩶
+            </p>
+
+
+            <p>
+                ขอให้ตุลาคมเดือนนี้
+                และทุกๆเดือนหลังจากนี้
+                เราก็ยังมีคำว่าเราอยู่ด้วยกันแบบนี้ไปนานๆเลยนะคะ
+                ขอให้ทุกความฝันของเธอเป็นจริง
+                ขอให้ทุกสิ่งที่เธอตั้งใจไว้
+                ค่อยๆเป็นไปตามที่หวัง
+            </p>
+
+
+            <p>
+                เค้าจะดีใจกับทุกความสำเร็จของเธอเสมอ
+                จะคอยอยู่ตรงนี้ในทุกๆก้าวของเธอ
+                เพราะสำหรับเค้าแล้ว
+                ความสุขของเธอก็เป็นความสุขของเค้าเหมือนกันนะ
+                แฟนของเค้า
+            </p>
+
+
+            <p>
+                พรเดือนนี้อะไรเจ๋งๆ
+                เค้ายกให้เธอหมดเลย
+                ขอให้เธอได้เจอแต่สิ่งดีๆ
+                ได้ยิ้มเยอะๆ
+                ได้ใช้ชีวิตในแบบที่เธออยากใช้
+                และถ้าวันไหนเหนื่อย
+                ก็อย่าลืมว่ามีเค้าอยู่ตรงนี้นะคะ
+                เค้ารักเธอมากๆเลยนะ 🫶🏻🩶
+            </p>
+
+
+            <div class="message-end">
+
+                Happy October ♡<br>
+                My gravity 🩶
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ปุ่มเปิดเพลงกรณีเบราว์เซอร์บล็อก -->
+
+    <button
+        class="music-note"
+        id="musicButton"
+    >
+        ♫
+    </button>
+
+</section>
+
+
+
 <script>
 
-/* =========================================================
-   GIFT
-========================================================= */
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
 const giftContainer =
     document.getElementById("giftContainer");
@@ -1113,24 +1534,26 @@ const clickButton =
 const video =
     document.getElementById("myVideo");
 
+const messageMusic =
+    document.getElementById("messageMusic");
+
+const musicButton =
+    document.getElementById("musicButton");
+
 
 let isOpening = false;
 
 
-/* =========================================================
-   CLICK GIFT
-========================================================= */
+/* =====================================================
+   กดกล่อง
+===================================================== */
 
 clickButton.addEventListener(
     "click",
     function(event) {
 
-        /* ป้องกัน event อื่น */
-
         event.stopPropagation();
 
-
-        /* ป้องกันกดซ้ำ */
 
         if (isOpening) {
             return;
@@ -1141,10 +1564,8 @@ clickButton.addEventListener(
 
 
         /*
-           เปลี่ยนกล่องจาก
-           gift.png
-           เป็น
-           gift-open.png
+           เปลี่ยนจาก gift.png
+           เป็น gift-open.png
         */
 
         giftContainer.classList.add("open");
@@ -1152,7 +1573,7 @@ clickButton.addEventListener(
 
         /*
            รอ 5 วินาที
-           แล้วเปลี่ยนไปหน้าวิดีโอ
+           ก่อนเข้าสู่วิดีโอ
         */
 
         setTimeout(
@@ -1163,25 +1584,18 @@ clickButton.addEventListener(
                 );
 
 
-                /*
-                   กลับไปเริ่มวิดีโอ
-                */
-
                 video.currentTime = 0;
 
 
                 /*
                    พยายามเล่นวิดีโอ
-
-                   บางเบราว์เซอร์อาจไม่อนุญาต
-                   autoplay จึงมี controls ให้กดเล่น
                 */
 
                 video.play().catch(
                     function() {
 
                         console.log(
-                            "ต้องกด Play เพื่อเล่นวิดีโอ"
+                            "กด Play เพื่อเล่นวิดีโอ"
                         );
 
                     }
@@ -1195,9 +1609,78 @@ clickButton.addEventListener(
 );
 
 
-/* =========================================================
+/* =====================================================
+   วิดีโอเล่นจบ
+===================================================== */
+
+video.addEventListener(
+    "ended",
+    function() {
+
+
+        /*
+           ไปหน้าข้อความ
+        */
+
+        document.body.classList.remove(
+            "show-video"
+        );
+
+
+        document.body.classList.add(
+            "show-message"
+        );
+
+
+        /*
+           เริ่มเพลง
+        */
+
+        messageMusic.currentTime = 0;
+
+
+        messageMusic.play().catch(
+            function() {
+
+                /*
+                   ถ้า autoplay ถูกบล็อก
+                   ให้แสดงปุ่มเพลง
+                */
+
+                musicButton.style.display =
+                    "block";
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
+   ปุ่มเปิดเพลง
+===================================================== */
+
+musicButton.addEventListener(
+    "click",
+    function() {
+
+        messageMusic.play().then(
+            function() {
+
+                musicButton.style.display =
+                    "none";
+
+            }
+        );
+
+    }
+);
+
+
+/* =====================================================
    ป้องกันลากรูป
-========================================================= */
+===================================================== */
 
 document
 .querySelectorAll("img")
