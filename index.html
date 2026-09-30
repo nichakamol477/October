@@ -12,6 +12,7 @@
 
 <title>Welcome October ♡</title>
 
+
 <style>
 
 /* =========================================================
@@ -31,24 +32,30 @@
     box-sizing: border-box;
 }
 
+
 html,
 body {
     width: 100%;
     height: 100%;
 }
 
+
 body {
+
     overflow: hidden;
-    background: #F6C6C7;
+
     font-family: "Itim", sans-serif;
+
+    background: #F6C6C7;
 }
 
 
 /* =========================================================
-   ทุกหน้า
+   PAGE
 ========================================================= */
 
 .page {
+
     position: absolute;
 
     inset: 0;
@@ -58,43 +65,62 @@ body {
 
     overflow: hidden;
 
-    background: #F6C6C7;
-
     transition:
         opacity 0.7s ease,
         visibility 0.7s ease;
 }
 
 
-/* หน้าแรก */
+/* =========================================================
+   PAGE 1
+========================================================= */
 
 #page1 {
+
+    background: #F6C6C7;
+
     opacity: 1;
+
     visibility: visible;
+
+    z-index: 1;
 }
 
 
-/* หน้าที่ 2 ซ่อนไว้ก่อน */
+/* =========================================================
+   PAGE 2
+========================================================= */
 
 #page2 {
+
+    background: #D0F4DE;
+
     opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 5;
+}
+
+
+/* เปลี่ยนหน้า */
+
+body.show-video #page1 {
+
+    opacity: 0;
+
     visibility: hidden;
 
     pointer-events: none;
 }
 
 
-/* เมื่อเปลี่ยนหน้า */
+body.show-video #page2 {
 
-body.next-page #page1 {
-    opacity: 0;
-    visibility: hidden;
-
-    pointer-events: none;
-}
-
-body.next-page #page2 {
     opacity: 1;
+
     visibility: visible;
 
     pointer-events: auto;
@@ -102,10 +128,11 @@ body.next-page #page2 {
 
 
 /* =========================================================
-   HEARTS
+   FLOATING HEARTS
 ========================================================= */
 
 .hearts {
+
     position: absolute;
 
     inset: 0;
@@ -115,7 +142,9 @@ body.next-page #page2 {
     pointer-events: none;
 }
 
+
 .heart {
+
     position: absolute;
 
     color: rgba(255,255,255,0.75);
@@ -124,7 +153,10 @@ body.next-page #page2 {
 
     opacity: 0;
 
-    animation: floatHeart ease-in-out infinite;
+    animation:
+        floatHeart
+        ease-in-out
+        infinite;
 }
 
 
@@ -137,6 +169,7 @@ body.next-page #page2 {
     animation-duration: 8s;
 }
 
+
 .heart:nth-child(2) {
     left: 16%;
     top: 68%;
@@ -144,6 +177,7 @@ body.next-page #page2 {
     animation-duration: 10s;
     animation-delay: 2s;
 }
+
 
 .heart:nth-child(3) {
     left: 27%;
@@ -153,6 +187,7 @@ body.next-page #page2 {
     animation-delay: 1s;
 }
 
+
 .heart:nth-child(4) {
     left: 42%;
     top: 76%;
@@ -160,6 +195,7 @@ body.next-page #page2 {
     animation-duration: 11s;
     animation-delay: 3s;
 }
+
 
 .heart:nth-child(5) {
     left: 53%;
@@ -169,6 +205,7 @@ body.next-page #page2 {
     animation-delay: 2s;
 }
 
+
 .heart:nth-child(6) {
     left: 65%;
     top: 57%;
@@ -176,6 +213,7 @@ body.next-page #page2 {
     animation-duration: 10s;
     animation-delay: 4s;
 }
+
 
 .heart:nth-child(7) {
     left: 78%;
@@ -185,6 +223,7 @@ body.next-page #page2 {
     animation-delay: 1s;
 }
 
+
 .heart:nth-child(8) {
     left: 91%;
     top: 70%;
@@ -192,6 +231,7 @@ body.next-page #page2 {
     animation-duration: 11s;
     animation-delay: 3s;
 }
+
 
 .heart:nth-child(9) {
     left: 2%;
@@ -201,6 +241,7 @@ body.next-page #page2 {
     animation-delay: 4s;
 }
 
+
 .heart:nth-child(10) {
     left: 86%;
     top: 43%;
@@ -209,6 +250,7 @@ body.next-page #page2 {
     animation-delay: 2s;
 }
 
+
 .heart:nth-child(11) {
     left: 14%;
     top: 34%;
@@ -216,6 +258,7 @@ body.next-page #page2 {
     animation-duration: 12s;
     animation-delay: 5s;
 }
+
 
 .heart:nth-child(12) {
     left: 60%;
@@ -226,9 +269,14 @@ body.next-page #page2 {
 }
 
 
+/* =========================================================
+   HEART ANIMATION
+========================================================= */
+
 @keyframes floatHeart {
 
     0% {
+
         opacity: 0.15;
 
         transform:
@@ -237,7 +285,9 @@ body.next-page #page2 {
             scale(0.95);
     }
 
+
     50% {
+
         opacity: 0.75;
 
         transform:
@@ -246,7 +296,9 @@ body.next-page #page2 {
             scale(1.06);
     }
 
+
     100% {
+
         opacity: 0.15;
 
         transform:
@@ -259,6 +311,7 @@ body.next-page #page2 {
 
 /* =========================================================
    WELCOME
+   ขยับขึ้นด้านบน
 ========================================================= */
 
 .welcome-text {
@@ -268,23 +321,30 @@ body.next-page #page2 {
     z-index: 10;
 
     left: 50%;
-    top: 17%;
+
+    top: 8%;
 
     transform: translateX(-50%);
 
-    width: 50%;
+    width: 55%;
 
     text-align: center;
 
     color: #000;
 
     font-size:
-        clamp(45px, 5vw, 78px);
+        clamp(
+            45px,
+            5vw,
+            78px
+        );
 
-    line-height: 1.25;
+    line-height: 1.2;
 }
 
+
 .welcome-text div {
+
     white-space: nowrap;
 }
 
@@ -306,8 +366,6 @@ body.next-page #page2 {
             330px
         );
 
-    /* อยู่ทางขวามากขึ้น */
-
     right:
         clamp(
             20px,
@@ -318,19 +376,25 @@ body.next-page #page2 {
     top:
         clamp(
             90px,
-            17vh,
-            180px
+            15vh,
+            170px
         );
 
     transform: rotate(10deg);
 }
+
 
 .polaroid img {
 
     display: block;
 
     width: 100%;
+
     height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
 }
 
 
@@ -366,12 +430,18 @@ body.next-page #page2 {
         );
 }
 
+
 .music-player img {
 
     display: block;
 
     width: 100%;
+
     height: auto;
+
+    user-select: none;
+
+    -webkit-user-drag: none;
 }
 
 
@@ -386,7 +456,8 @@ body.next-page #page2 {
     z-index: 30;
 
     left: 50%;
-    top: 53%;
+
+    top: 52%;
 
     transform:
         translate(-50%, -50%);
@@ -398,19 +469,20 @@ body.next-page #page2 {
             350px
         );
 
-    cursor: pointer;
-
     text-align: center;
 }
 
 
-/* กล่องปิด */
+/* =========================================================
+   GIFT IMAGE
+========================================================= */
 
 .gift-box {
 
     display: block;
 
     width: 100%;
+
     height: auto;
 
     transition:
@@ -418,30 +490,13 @@ body.next-page #page2 {
 }
 
 
-/* เอฟเฟกต์ตอนเอาเมาส์ไปวาง */
+/* เมื่อเอาเมาส์ชี้ */
 
 .gift-container:hover .gift-box {
 
     transform:
-        scale(1.05)
+        scale(1.04)
         translateY(-5px);
-}
-
-
-/* ข้อความ */
-
-.click-text {
-
-    margin-top: 8px;
-
-    font-size:
-        clamp(
-            22px,
-            2.5vw,
-            34px
-        );
-
-    color: #000;
 }
 
 
@@ -454,45 +509,124 @@ body.next-page #page2 {
     display: none;
 
     width: 100%;
+
     height: auto;
 }
 
 
-/* เมื่อเปิด */
+/* =========================================================
+   CLICK BUTTON
+========================================================= */
+
+.click-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 18px;
+
+    padding:
+        8px 25px 10px;
+
+    min-width: 150px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #000000;
+
+    font-family: "Itim", sans-serif;
+
+    font-size:
+        clamp(
+            23px,
+            2.5vw,
+            34px
+        );
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0,0,0,0.10);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.click-button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    box-shadow:
+        0 8px 18px
+        rgba(0,0,0,0.15);
+}
+
+
+.click-button:active {
+
+    transform:
+        scale(0.96);
+}
+
+
+/* =========================================================
+   ตอนเปิดกล่อง
+========================================================= */
 
 .gift-container.open .gift-box {
 
     display: none;
 }
 
-.gift-container.open .click-text {
-
-    display: none;
-}
 
 .gift-container.open .gift-open {
 
     display: block;
 
     animation:
-        giftOpen
+        giftOpenAnimation
         0.8s
         ease-out
         forwards;
 }
 
 
-@keyframes giftOpen {
+.gift-container.open .click-button {
+
+    display: none;
+}
+
+
+/* =========================================================
+   GIFT OPEN ANIMATION
+========================================================= */
+
+@keyframes giftOpenAnimation {
 
     0% {
 
         opacity: 0;
 
         transform:
-            scale(0.5)
+            scale(0.55)
             translateY(30px)
             rotate(-5deg);
     }
+
 
     60% {
 
@@ -503,6 +637,7 @@ body.next-page #page2 {
             translateY(-8px)
             rotate(2deg);
     }
+
 
     100% {
 
@@ -517,87 +652,52 @@ body.next-page #page2 {
 
 
 /* =========================================================
-   PAGE 2
+   VIDEO PAGE
 ========================================================= */
 
-.page2-content {
+.video-page-content {
 
     position: relative;
 
     width: 100%;
+
     height: 100%;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
-    flex-direction: column;
+    padding: 2vh 2vw;
 }
 
 
-/* กล่องเปิดตอนเปลี่ยนหน้า */
+/* =========================================================
+   VIDEO
+========================================================= */
 
-.open-gift-big {
+#myVideo {
 
-    width:
-        clamp(
-            180px,
-            25vw,
-            320px
-        );
+    display: block;
 
-    animation:
-        giftOpenPage
-        0.8s
-        ease-out;
-}
+    width: 100%;
 
+    height: 100%;
 
-@keyframes giftOpenPage {
+    max-width: 100%;
 
-    0% {
-        opacity: 0;
+    max-height: 100%;
 
-        transform:
-            scale(0.5)
-            translateY(30px);
-    }
+    object-fit: contain;
 
-    70% {
+    border-radius: 12px;
 
-        opacity: 1;
+    background: #D0F4DE;
 
-        transform:
-            scale(1.08)
-            translateY(-5px);
-    }
-
-    100% {
-
-        opacity: 1;
-
-        transform:
-            scale(1)
-            translateY(0);
-    }
-}
-
-
-/* ข้อความหน้าที่ 2 */
-
-.page2-title {
-
-    margin-top: 20px;
-
-    font-size:
-        clamp(
-            28px,
-            4vw,
-            50px
-        );
-
-    color: #000;
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,0.12);
 }
 
 
@@ -612,9 +712,9 @@ and (orientation: portrait) {
 
     .welcome-text {
 
-        top: 15%;
+        top: 7%;
 
-        width: 85%;
+        width: 90%;
 
         font-size:
             clamp(
@@ -653,6 +753,19 @@ and (orientation: portrait) {
     }
 
 
+    .click-button {
+
+        margin-top: 12px;
+
+        min-width: 135px;
+
+        padding:
+            8px 20px 10px;
+
+        font-size: 25px;
+    }
+
+
     .music-player {
 
         width:
@@ -665,13 +778,6 @@ and (orientation: portrait) {
         left: 50%;
 
         bottom: 5vh;
-
-        transform:
-            translateX(-50%);
-    }
-
-
-    .music-player:hover {
 
         transform:
             translateX(-50%);
@@ -727,6 +833,26 @@ and (orientation: portrait) {
     .heart:nth-child(12) {
         font-size: 30px;
     }
+
+
+    /* วิดีโอบนมือถือ */
+
+    .video-page-content {
+
+        padding: 0;
+    }
+
+
+    #myVideo {
+
+        width: 100%;
+
+        height: 100%;
+
+        border-radius: 0;
+
+        box-shadow: none;
+    }
 }
 
 
@@ -738,9 +864,10 @@ and (orientation: portrait) {
 (max-width: 420px)
 and (orientation: portrait) {
 
+
     .welcome-text {
 
-        top: 16%;
+        top: 7%;
 
         font-size:
             clamp(
@@ -779,16 +906,19 @@ and (orientation: portrait) {
 
 
 /* =========================================================
-   LANDSCAPE PHONE
+   PHONE LANDSCAPE
 ========================================================= */
 
 @media
 (max-width: 767px)
 and (orientation: landscape) {
 
+
     .welcome-text {
 
-        display: none;
+        top: 5%;
+
+        font-size: 38px;
     }
 
 
@@ -840,7 +970,7 @@ and (orientation: landscape) {
 >
 
 
-    <!-- หัวใจ -->
+    <!-- หัวใจลอย -->
 
     <div class="hearts">
 
@@ -883,7 +1013,7 @@ and (orientation: landscape) {
     </div>
 
 
-    <!-- Music -->
+    <!-- Music Player -->
 
     <div class="music-player">
 
@@ -902,12 +1032,16 @@ and (orientation: landscape) {
         id="giftContainer"
     >
 
+        <!-- กล่องปิด -->
+
         <img
             class="gift-box"
             src="gift.png"
             alt="Gift box"
         >
 
+
+        <!-- กล่องเปิด -->
 
         <img
             class="gift-open"
@@ -916,9 +1050,14 @@ and (orientation: landscape) {
         >
 
 
-        <div class="click-text">
+        <!-- ปุ่ม -->
+
+        <button
+            class="click-button"
+            id="clickButton"
+        >
             Click me ♡
-        </div>
+        </button>
 
     </div>
 
@@ -927,7 +1066,7 @@ and (orientation: landscape) {
 
 
 <!-- =======================================================
-     PAGE 2
+     PAGE 2 : VIDEO
 ======================================================== -->
 
 <section
@@ -935,23 +1074,23 @@ and (orientation: landscape) {
     id="page2"
 >
 
-    <div class="page2-content">
+    <div class="video-page-content">
 
-
-        <!-- กล่องเปิด -->
-
-        <img
-            class="open-gift-big"
-            src="gift-open.png"
-            alt="Open gift"
+        <video
+            id="myVideo"
+            controls
+            playsinline
+            preload="auto"
         >
 
+            <source
+                src="PLENG.mp4"
+                type="video/mp4"
+            >
 
-        <div class="page2-title">
+            เบราว์เซอร์ของคุณไม่รองรับวิดีโอ
 
-            ♡ Something for you ♡
-
-        </div>
+        </video>
 
     </div>
 
@@ -962,51 +1101,94 @@ and (orientation: landscape) {
 <script>
 
 /* =========================================================
-   GIFT CLICK
+   GIFT
 ========================================================= */
 
-const gift =
+const giftContainer =
     document.getElementById("giftContainer");
 
+const clickButton =
+    document.getElementById("clickButton");
 
-gift.addEventListener(
+const video =
+    document.getElementById("myVideo");
+
+
+let isOpening = false;
+
+
+/* =========================================================
+   CLICK GIFT
+========================================================= */
+
+clickButton.addEventListener(
     "click",
-    function() {
+    function(event) {
+
+        /* ป้องกัน event อื่น */
+
+        event.stopPropagation();
 
 
         /* ป้องกันกดซ้ำ */
 
-        if (
-            gift.classList.contains("open")
-        ) {
+        if (isOpening) {
             return;
         }
 
 
-        /* เปลี่ยนจากกล่องปิด
-           เป็นกล่องเปิด */
-
-        gift.classList.add("open");
+        isOpening = true;
 
 
         /*
-           รอให้เห็น animation
-           กล่องเปิดก่อน
+           เปลี่ยนกล่องจาก
+           gift.png
+           เป็น
+           gift-open.png
+        */
+
+        giftContainer.classList.add("open");
+
+
+        /*
+           รอ 5 วินาที
+           แล้วเปลี่ยนไปหน้าวิดีโอ
         */
 
         setTimeout(
             function() {
 
+                document.body.classList.add(
+                    "show-video"
+                );
+
+
                 /*
-                   เปลี่ยนไปหน้าที่ 2
+                   กลับไปเริ่มวิดีโอ
                 */
 
-                document.body.classList.add(
-                    "next-page"
+                video.currentTime = 0;
+
+
+                /*
+                   พยายามเล่นวิดีโอ
+
+                   บางเบราว์เซอร์อาจไม่อนุญาต
+                   autoplay จึงมี controls ให้กดเล่น
+                */
+
+                video.play().catch(
+                    function() {
+
+                        console.log(
+                            "ต้องกด Play เพื่อเล่นวิดีโอ"
+                        );
+
+                    }
                 );
 
             },
-            1000
+            5000
         );
 
     }
